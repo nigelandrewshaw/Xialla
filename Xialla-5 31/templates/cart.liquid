@@ -1,0 +1,109 @@
+{% layout 'cart' %}
+      
+  <div data-collapse="medium" data-animation="default" data-duration="400" role="banner" class="navigation w-nav">
+    <div class="mainmenuwrap"><a href="/" id="w-node-5cc7a7db2383-a7db2382" class="brand w-nav-brand"><img src="{{ 'logo.png' | asset_url }}" width="44" alt="Xialla Logo" class="header-logo"></a>
+      <div id="w-node-5cc7a7db2385-a7db2382" class="cart-nav-menu-wrap">
+        <a href="/products/xialla" class="button-small continue-browsing w-inline-block">
+          <div class="button-label">{{ 'cart.DIV_0' | t }}</div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="cart-heading-container">
+    <div class="cart-heading-wrap">
+      <h1 class="page-title">{{ 'cart.H1_1' | t }}</h1>
+    </div>
+  </div>
+  <div class="cart-container">
+    {% if cart.item_count > 0 %}<div class="cart---copy-this w-form">
+      <form data-name="Email Form" method="post" novalidate="novalidate" action="/cart">
+        <div class="cart-table">
+          {% if cart.item_count == 0 %}<div class="cart-empty-message">{{ 'cart.DIV_2' | t }}</div>{% endif %}
+          <div class="table-header w-hidden-tiny">
+            <div class="table-header-data-2 product"></div>
+            <div class="table-header-data-2"></div>
+            <div class="table-header-data-2"></div>
+            <div class="table-header-data-2"></div>
+          </div>
+          <div class="collection-list-wrapper-cart w-dyn-list">
+            <div class="collection-list-cart w-dyn-items">
+              {% for item in cart.items %}<div class="w-dyn-item">
+                <div class="cart-row---copy-this">
+                  <div class="table-row-data product">
+                    <div class="popup-cart-image-wrap"><a href="#" class="w-inline-block"><img src="{{ item.product.featured_image.src | img_url: 'master' }}" alt="" class="cart-image"></a></div>
+                    <div class="popup-cart-row-top-bottom-wrap">
+                      <div class="popup-cart-row-top"><a href="{{ item.product.url }}" class="product-title">{{ item.product.title }}</a></div>
+                      <div class="popup-cart-row-bottom">
+                        <div class="product-info-wrapper-2">
+                          {% unless item.product.has_only_default_variant %}<p class="variant-title">{{ item.variant.title }}</p>{% endunless %}
+                          <a href="/cart/change?line={{ forloop.index }}&amp;amp;quantity=0" class="remove-item w-inline-block" udy-el="remove-item">
+                            <p class="remove-link">{{ 'cart.P_3' | t }}</p>
+                          </a>
+                        </div>
+                        <div class="div-block-146">
+                          <div class="table-row-data price">
+                            <p class="table-header-label-2">{{ 'cart.P_4' | t }}</p>
+                            <p class="cart-price">{{ item.price | money }}</p>
+                          </div>
+                          <div class="table-row-data quantity">
+                            <p class="table-header-label-2">{{ 'cart.P_5' | t }}</p><input type="number" class="text-field-4 w-input" maxlength="256" name="updates[]" placeholder="Example Text" id="updates_{{ item.key }}" min="0" value="{{ item.quantity }}"></div>
+                          <div class="table-row-data total">
+                            <p class="table-header-label-2">{{ 'cart.P_6' | t }}</p>
+                            <p class="cart-total-price">{{ item.final_line_price | money }}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>{% endfor %}
+            </div>
+            
+          </div>
+        </div>
+        <div class="cart-details">
+          {% if cart.item_count > 0 %}<div class="cart-details-line">
+            <p class="total-label">{{ 'cart.P_7' | t }}</p>
+            <p class="total-price">{{ cart.total_price | money }}</p>
+          </div>{% endif %}
+        </div>
+        {% if cart.item_count > 0 %}<div class="cart-actions"><input type="submit" value="Update" data-wait="Please wait..." class="submit-button update w-button" name="update"><input type="submit" value="Checkout" data-wait="Please wait..." class="submit-button checkout w-button" name="checkout"></div>{% endif %}
+      </form>
+      
+      
+    </div>{% endif %}
+  </div>
+  <div class="footer-wrapper div-block-144">
+    <div class="cart-container">
+      <div class="w-layout-grid footer2-bottom-grid">
+        <h5 id="w-node-24065f2c5a9c-ccae300d">{{ 'cart.H5_8' | t }}</h5>
+        <div id="w-node-828bacc99741-ccae300d" class="content23-item-wrap">
+          <div class="content23-item">
+            <div class="text-label-4 text-label-bottom-clear">{{ 'cart.DIV_9' | t }}</div>
+            <p><a href="tel:+18885044526">{{ 'cart.A_10' | t }}</a></p>
+            <div class="text-label-4 text-label-bottom-clear">{{ 'cart.DIV_11' | t }}</div><a href="mailto:info@xialla.com">{{ 'cart.A_12' | t }}</a></div>
+        </div>
+        <div id="w-node-09ceccae3014-ccae300d" class="div-block-137"><a href="/pages/terms-of-service" class="checkout-footer-link">{{ 'cart.A_13' | t }}</a><a href="/pages/privacy-policy" class="footer-small-link">{{ 'cart.A_14' | t }}</a></div>
+      </div>
+    </div>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js?site=5eac0ded2d2f09a505faf644" type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="{{ 'webflow.js' | asset_url }}" type="text/javascript"></script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+  <!--  Stop iPhone from changing color of phone links  -->
+  <style>
+  a[href^=tel] {
+text-decoration:inherit;
+color: inherit;
+}
+</style>
+  <!--  End Stop iPhone   -->
+  <!--  Ellipsis style used for truncating search result item title  -->
+  <style>
+  .ellipsis {
+  text-overflow: ellipsis;
+}
+</style>
+  <!--  End Elipsis  -->
+
+{% include 'notifications' %}{{ 'udesly-shopify.min.js' | asset_url | script_tag }}

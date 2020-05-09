@@ -1,0 +1,199 @@
+{% layout 'page.customer-support' %}
+      
+  <div data-collapse="medium" data-animation="default" data-duration="400" role="banner" class="navigation w-nav">
+    <div class="mainmenuwrap"><a href="/" id="w-node-f20facedcda8-cd55b9ef" class="brand w-nav-brand"><img src="{{ 'logo.png' | asset_url }}" width="44" alt="Xialla Logo" class="header-logo"></a>
+      <div id="w-node-f20facedcdaa-cd55b9ef" class="nav1-menu-wrap">
+        <div class="div-block-141">
+          <nav role="navigation" class="nav-menu-2 w-nav-menu"><a href="#" class="nav-link-2 dropdown-home w-nav-link">{{ 'customer-support.A_0' | t }}</a>
+            <div data-delay="0" class="nav-link-2 w-dropdown">
+              <div class="dropdown-toggle w-dropdown-toggle">
+                <div class="menu-text">{{ 'customer-support.DIV_1' | t }}</div>
+                <div class="icon w-icon-dropdown-toggle"></div>
+              </div>
+              <nav class="dropdown-list-2 w-dropdown-list"><a href="/pages/how-it-works" class="menuitem dropdown w-dropdown-link">{{ 'customer-support.A_2' | t }}</a><a href="/pages/clinical-trials" class="menuitem dropdown w-dropdown-link">{{ 'customer-support.A_3' | t }}</a><a href="/pages/about" page="default" class="menuitem dropdown w-dropdown-link">{{ 'customer-support.A_4' | t }}</a><a href="/pages/contact" class="menuitem dropdown w-dropdown-link">{{ 'customer-support.A_5' | t }}</a></nav>
+            </div>
+            <div data-delay="0" class="nav-link-2 w-dropdown">
+              <div class="dropdown-toggle w-dropdown-toggle">
+                <div class="menu-text">{{ 'customer-support.DIV_6' | t }}</div>
+                <div class="icon w-icon-dropdown-toggle"></div>
+              </div>
+              <nav class="dropdown-list-2 w-dropdown-list"><a href="/products/xialla" class="menuitem dropdown w-dropdown-link">{{ 'customer-support.A_7' | t }}</a><a href="/products/adhesive-pads-30-pack" class="menuitem dropdown w-dropdown-link">{{ 'customer-support.A_8' | t }}</a></nav>
+            </div>
+            <div data-delay="0" class="nav-link-2 w-dropdown">
+              <div class="dropdown-toggle w-dropdown-toggle">
+                <div class="menu-text">{{ 'customer-support.DIV_9' | t }}</div>
+                <div class="icon w-icon-dropdown-toggle"></div>
+              </div>
+              <nav class="dropdown-list-2 w-dropdown-list"><a href="/pages/help" class="menuitem dropdown w-dropdown-link">{{ 'customer-support.A_10' | t }}</a><a href="/pages/customer-support" aria-current="page" class="menuitem dropdown w-dropdown-link w--current">{{ 'customer-support.A_11' | t }}</a><a href="/pages/instructions-for-use" class="menuitem dropdown w-dropdown-link">{{ 'customer-support.A_12' | t }}</a></nav>
+            </div>
+          </nav>
+        </div>
+        <div class="div-block-140">
+          <div data-node-type="commerce-cart-wrapper" data-open-product="" data-wf-cart-type="rightDropdown" data-wf-cart-query="" data-wf-page-link-href-prefix="" class="w-commerce-commercecartwrapper cart-3">
+            <a href="#" data-node-type="commerce-cart-open-link" class="w-commerce-commercecartopenlink button cc-cart w-inline-block">
+              <div class="w-commerce-commercecartopenlinkcount cart-quantity-2" udy-el="cart-count">{{ cart.item_count }}</div>
+            </a>
+            <div data-node-type="commerce-cart-container-wrapper" style="display:none" class="w-commerce-commercecartcontainerwrapper w-commerce-commercecartcontainerwrapper--cartType-rightDropdown">
+              <div data-node-type="commerce-cart-container" class="w-commerce-commercecartcontainer cart-container-3">
+                <div class="w-commerce-commercecartheader">
+                  <h4 class="w-commerce-commercecartheading">{{ 'customer-support.H4_13' | t }}</h4><a href="#" data-node-type="commerce-cart-close-link" class="w-commerce-commercecartcloselink close-button-3 w-inline-block"><svg width="16px" height="16px" viewBox="0 0 16 16"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill-rule="nonzero" fill="#333333"><polygon points="6.23223305 8 0.616116524 13.6161165 2.38388348 15.3838835 8 9.76776695 13.6161165 15.3838835 15.3838835 13.6161165 9.76776695 8 15.3838835 2.38388348 13.6161165 0.616116524 8 6.23223305 2.38388348 0.616116524 0.616116524 2.38388348 6.23223305 8"></polygon></g></g></svg></a></div>
+                <div class="w-commerce-commercecartformwrapper">
+                  <form data-node-type="commerce-cart-form" class="w-commerce-commercecartform {% if cart.item_count == 0 %}udesly-display-none{% endif %}">
+                    
+                    
+                    <ul role="list" class="mini-cart-list" udy-el="items-list">
+                      {% for item in cart.items %}<li class="mini-cart-list-item">
+                        <div class="product-row">
+                          <div class="div-block-137"><img src="{{ item.product.featured_image.src | img_url: 'large' }}" alt="" class="image-32">
+                            <div class="div-block-142">
+                              <div class="cart-product-name">{{ item.product.title }}</div>
+                              <div class="cart-product-price">{{ item.price | money }}</div>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="text-block-82">{{ item.quantity }}</div>
+                          </div>
+                        </div>
+                      </li>{% endfor %}
+                    </ul>
+                    <div class="w-commerce-commercecartfooter {% if cart.item_count == 0 %}udesly-display-none{% endif %}" udy-el="cart-actions">
+                      <div class="w-commerce-commercecartlineitem popup-cart-line-item">
+                        <div class="popup-cart-subtotal-label">{{ 'customer-support.DIV_14' | t }}</div>
+                        <div class="w-commerce-commercecartordervalue popup-cart-subtotal" udy-el="cart-total">{{ cart.total_price | money }}</div>
+                      </div>
+                      <div class="checkout-actions"><a href="/cart" value="Edit" data-node-type="cart-checkout-button" class="w-commerce-commercecartcheckoutbutton submit-button-2 cart-details" data-loading-text="Edit">{{ 'customer-support.A_15' | t }}</a><a href="/checkout" value="Checkout" data-node-type="cart-checkout-button" class="w-commerce-commercecartcheckoutbutton submit-button-2 checkout" data-loading-text="Chekout">{{ 'customer-support.A_16' | t }}</a></div>
+                    </div>
+                  </form>
+                  <div class="w-commerce-commercecartemptystate {% if cart.item_count != 0 %}udesly-display-none{% endif %}" udy-el="no-items-in-cart">
+                    <div class="text-block-84">{{ 'customer-support.DIV_17' | t }}</div>
+                  </div>
+                  <div style="display:none" data-node-type="commerce-cart-error" class="w-commerce-commercecarterrorstate">
+                    <div class="w-cart-error-msg" data-w-cart-quantity-error="Product is not available in this quantity." data-w-cart-checkout-error="Checkout is disabled on this site." data-w-cart-general-error="Something went wrong when adding this item to the cart." data-w-cart-cart_order_min-error="Cart failed.">{{ 'customer-support.DIV_18' | t }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <script id="mini-cart-template">
+          window.udeslyMiniCartTemplate = function(item) {
+            return `<li class="mini-cart-list-item" data-item-id="${item.id}">
+                        <div class="product-row">
+                          <div class="div-block-137"><img src="${item.image}" alt="" class="image-32">
+                            <div class="div-block-142">
+                              <div class="cart-product-name">${item.title}</div>
+                              <div class="cart-product-price">${item.price}</div>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="text-block-82">${item.quantity}</div>
+                          </div>
+                        </div>
+                      </li>`
+          }
+          </script></div>
+          <a href="/products/xialla" class="button-small header w-inline-block">
+            <div class="button-label">{{ 'customer-support.DIV_19' | t }}</div>
+          </a>
+          <div class="menu-button-2 w-nav-button"><img src="{{ 'bars.svg' | asset_url }}" alt="" class="menu-icon-2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="policy-wrapper">
+    <h1 class="page-title">{{ 'customer-support.H1_20' | t }}</h1>
+    <p class="subheadline-paragraph">{{ 'customer-support.P_21' | t }}</p>
+    <div class="support-form-wrapper">
+      <div class="size4-text">{{ 'customer-support.DIV_22' | t }}<br></div>
+      <div class="standard-form w-form">
+        <form id="wf-form-Support-Request-Form" name="wf-form-Support-Request-Form" data-name="Support Request Form" method="get" redirect="/customer-support-thank-you" data-redirect="/customer-support-thank-you" action="https://hooks.zapier.com/hooks/catch/4718621/oraeqof/" class="cta11-form-wrap-copy"><input type="email" class="form-field w-input" maxlength="256" name="Email-Address" data-name="Email Address" placeholder="Email address" id="Support-Email-Address" required=""><input type="text" class="form-field w-input" maxlength="256" name="First-Name" data-name="First Name" placeholder="First Name" id="Support-First-Name" required=""><input type="text" class="form-field w-input" maxlength="256" name="Last-Name" data-name="Last Name" placeholder="Last Name" id="Support-Last-Name" required=""><input type="text" class="form-field w-input" maxlength="256" name="Subject" data-name="Subject" placeholder="What do you need help with?" id="Support-Subject" required=""><textarea required="" maxlength="5000" id="Support-Details" name="Details" data-name="Details" placeholder="Details" class="form-field w-input"></textarea><input type="submit" value="Submit" data-wait="Please wait..." id="Submit-Button" class="submit-button w-button"></form>
+        <div class="success-message w-form-done">
+          <div>{{ 'customer-support.DIV_23' | t }}</div>
+        </div>
+        <div class="error-message w-form-fail">
+          <div>{{ 'customer-support.DIV_24' | t }}</div>
+        </div>
+      </div>
+      <div class="hbspt-form w-embed w-script">
+        <!-- [if lte IE 8]>
+<script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/v2-legacy.js"></script>
+<![endif] -->
+        <script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/v2.js"></script>
+        <script>
+  hbspt.forms.create({
+	portalId: "5835628",
+	formId: "774d5052-5d18-49ef-b05b-10f67048d613"
+});
+</script>
+      </div>
+    </div>
+    <div class="rich-text-block full-width w-richtext">
+      <p>{{ 'customer-support.P_25' | t }}</p>
+      <ul role="list">
+        <li>{{ 'customer-support.LI_26' | t }}<a href="tel:1888504452692">{{ 'customer-support.A_27' | t }}</a></li>
+        <li>{{ 'customer-support.LI_28' | t }}<a href="tel:1888504452697">{{ 'customer-support.A_29' | t }}</a></li>
+        <li>{{ 'customer-support.LI_30' | t }}<a href="mailto:help@xialla.com">{{ 'customer-support.A_31' | t }}</a></li>
+      </ul>
+      <h4>{{ 'customer-support.H4_32' | t }}</h4>
+      <p>{{ 'customer-support.P_33' | t }}</p>
+      <h4>{{ 'customer-support.H4_34' | t }}</h4>
+      <p>{{ 'customer-support.P_35' | t }}</p>
+      <h4>{{ 'customer-support.H4_36' | t }}</h4>
+      <p>{{ 'customer-support.P_37' | t }}</p>
+      <h4>{{ 'customer-support.H4_38' | t }}</h4>
+      <p>{{ 'customer-support.P_39' | t }}</p>
+    </div>
+  </div>
+  <div class="footer-wrapper">
+    <div class="footer-simple-top-section">
+      <div class="section-normal">
+        <div class="content">
+          <div class="footer2-divider"></div>
+        </div>
+        <div class="w-layout-grid footer2-links-grid">
+          <div id="w-node-8fe8825a9ceb-825a9cd1"><a href="#" class="footer-logo-link w-inline-block"><img src="{{ 'logo.png' | asset_url }}" alt="Xialla Logo"></a>
+            <div class="footer2-links-wrap">
+              <h6 class="text-label-footer-links-header">{{ 'customer-support.H6_40' | t }}</h6><a href="mailto:press@xialla.com" class="footer2-link">{{ 'customer-support.A_41' | t }}</a></div>
+          </div>
+          <div id="w-node-8fe8825a9cf3-825a9cd1" class="footer2-links-wrap">
+            <h6 class="text-label-footer-links-header">{{ 'customer-support.H6_42' | t }}</h6><a href="/products/xialla" class="footer2-link">{{ 'customer-support.A_43' | t }}</a><a href="/products/adhesive-pads-30-pack" class="footer2-link">{{ 'customer-support.A_44' | t }}</a><a href="/pages/refund-policy" class="footer2-link">{{ 'customer-support.A_45' | t }}</a></div>
+          <div id="w-node-8fe8825a9cfc-825a9cd1" class="footer2-links-wrap">
+            <h6 class="text-label-footer-links-header">{{ 'customer-support.H6_46' | t }}</h6><a href="/pages/how-it-works" class="footer2-link">{{ 'customer-support.A_47' | t }}</a><a href="/pages/instructions-for-use" class="footer2-link">{{ 'customer-support.A_48' | t }}</a><a href="/pages/clinical-trials" class="footer2-link">{{ 'customer-support.A_49' | t }}</a><a href="/pages/info-kit" class="footer2-link">{{ 'customer-support.A_50' | t }}</a><a href="/pages/about" class="footer2-link">{{ 'customer-support.A_51' | t }}</a></div>
+          <div id="w-node-8fe8825a9d09-825a9cd1" class="footer2-links-wrap">
+            <h6 class="text-label-footer-links-header">{{ 'customer-support.H6_52' | t }}</h6><a href="/pages/customer-support" aria-current="page" class="footer2-link w--current">{{ 'customer-support.A_53' | t }}</a><a href="/pages/help" class="footer2-link">{{ 'customer-support.A_54' | t }}</a><a href="/pages/contact" class="footer2-link">{{ 'customer-support.A_55' | t }}</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="section-normal">
+      <div class="w-layout-grid footer2-bottom-grid">
+        <div id="w-node-8fe8825a9d14-825a9cd1" class="footer2-bottom-left-column">
+          <div class="deco-dot deco-dot-centered"></div>
+          <div class="paragraph-small-2">{{ 'customer-support.DIV_56' | t }}<br>{{ 'customer-support.DIV_57' | t }}<br>{{ 'customer-support.DIV_58' | t }}<br>{{ 'customer-support.DIV_59' | t }}<br>{{ 'customer-support.DIV_60' | t }}<a href="/practitioners#clinical-studies"><br></a></div>
+        </div>
+        <div id="w-node-8fe8825a9d23-825a9cd1">
+          <div class="footer2-disclaimer-wrap">
+            <p class="paragraph">{{ 'customer-support.P_61' | t }}</p>
+          </div>
+        </div>
+        <div id="w-node-8fe8825a9d27-825a9cd1" class="div-block-137"><a href="/pages/terms-of-service" class="footer-small-link">{{ 'customer-support.A_62' | t }}</a><a href="/pages/privacy-policy" class="footer-small-link">{{ 'customer-support.A_63' | t }}</a></div>
+      </div>
+    </div>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js?site=5eac0ded2d2f09a505faf644" type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="{{ 'webflow.js' | asset_url }}" type="text/javascript"></script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+  <!--  Stop iPhone from changing color of phone links  -->
+  <style>
+  a[href^=tel] {
+text-decoration:inherit;
+color: inherit;
+}
+</style>
+  <!--  End Stop iPhone   -->
+  <!--  Ellipsis style used for truncating search result item title  -->
+  <style>
+  .ellipsis {
+  text-overflow: ellipsis;
+}
+</style>
+  <!--  End Elipsis  -->
+
+{% include 'notifications' %}{{ 'udesly-shopify.min.js' | asset_url | script_tag }}

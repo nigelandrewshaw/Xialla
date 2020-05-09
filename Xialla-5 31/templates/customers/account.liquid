@@ -1,0 +1,186 @@
+{% layout 'customers_account' %}
+      
+  <div data-collapse="medium" data-animation="default" data-duration="400" role="banner" class="navigation w-nav">
+    <div class="mainmenuwrap"><a href="/" id="w-node-f20facedcda8-cd55b9ef" class="brand w-nav-brand"><img src="{{ 'logo.png' | asset_url }}" width="44" alt="Xialla Logo" class="header-logo"></a>
+      <div id="w-node-f20facedcdaa-cd55b9ef" class="nav1-menu-wrap">
+        <div class="div-block-141">
+          <nav role="navigation" class="nav-menu-2 w-nav-menu"><a href="#" class="nav-link-2 dropdown-home w-nav-link">{{ 'customersaccount.A_0' | t }}</a>
+            <div data-delay="0" class="nav-link-2 w-dropdown">
+              <div class="dropdown-toggle w-dropdown-toggle">
+                <div class="menu-text">{{ 'customersaccount.DIV_1' | t }}</div>
+                <div class="icon w-icon-dropdown-toggle"></div>
+              </div>
+              <nav class="dropdown-list-2 w-dropdown-list"><a href="/pages/how-it-works" class="menuitem dropdown w-dropdown-link">{{ 'customersaccount.A_2' | t }}</a><a href="/pages/clinical-trials" class="menuitem dropdown w-dropdown-link">{{ 'customersaccount.A_3' | t }}</a><a href="/pages/about" page="default" class="menuitem dropdown w-dropdown-link">{{ 'customersaccount.A_4' | t }}</a><a href="/pages/contact" class="menuitem dropdown w-dropdown-link">{{ 'customersaccount.A_5' | t }}</a></nav>
+            </div>
+            <div data-delay="0" class="nav-link-2 w-dropdown">
+              <div class="dropdown-toggle w-dropdown-toggle">
+                <div class="menu-text">{{ 'customersaccount.DIV_6' | t }}</div>
+                <div class="icon w-icon-dropdown-toggle"></div>
+              </div>
+              <nav class="dropdown-list-2 w-dropdown-list"><a href="/products/xialla" class="menuitem dropdown w-dropdown-link">{{ 'customersaccount.A_7' | t }}</a><a href="/products/adhesive-pads-30-pack" class="menuitem dropdown w-dropdown-link">{{ 'customersaccount.A_8' | t }}</a></nav>
+            </div>
+            <div data-delay="0" class="nav-link-2 w-dropdown">
+              <div class="dropdown-toggle w-dropdown-toggle">
+                <div class="menu-text">{{ 'customersaccount.DIV_9' | t }}</div>
+                <div class="icon w-icon-dropdown-toggle"></div>
+              </div>
+              <nav class="dropdown-list-2 w-dropdown-list"><a href="/pages/help" class="menuitem dropdown w-dropdown-link">{{ 'customersaccount.A_10' | t }}</a><a href="/pages/customer-support" class="menuitem dropdown w-dropdown-link">{{ 'customersaccount.A_11' | t }}</a><a href="/pages/instructions-for-use" class="menuitem dropdown w-dropdown-link">{{ 'customersaccount.A_12' | t }}</a></nav>
+            </div>
+          </nav>
+        </div>
+        <div class="div-block-140">
+          <div data-node-type="commerce-cart-wrapper" data-open-product="" data-wf-cart-type="rightDropdown" data-wf-cart-query="" data-wf-page-link-href-prefix="" class="w-commerce-commercecartwrapper cart-3">
+            <a href="#" data-node-type="commerce-cart-open-link" class="w-commerce-commercecartopenlink button cc-cart w-inline-block">
+              <div class="w-commerce-commercecartopenlinkcount cart-quantity-2" udy-el="cart-count">{{ cart.item_count }}</div>
+            </a>
+            <div data-node-type="commerce-cart-container-wrapper" style="display:none" class="w-commerce-commercecartcontainerwrapper w-commerce-commercecartcontainerwrapper--cartType-rightDropdown">
+              <div data-node-type="commerce-cart-container" class="w-commerce-commercecartcontainer cart-container-3">
+                <div class="w-commerce-commercecartheader">
+                  <h4 class="w-commerce-commercecartheading">{{ 'customersaccount.H4_13' | t }}</h4><a href="#" data-node-type="commerce-cart-close-link" class="w-commerce-commercecartcloselink close-button-3 w-inline-block"><svg width="16px" height="16px" viewBox="0 0 16 16"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill-rule="nonzero" fill="#333333"><polygon points="6.23223305 8 0.616116524 13.6161165 2.38388348 15.3838835 8 9.76776695 13.6161165 15.3838835 15.3838835 13.6161165 9.76776695 8 15.3838835 2.38388348 13.6161165 0.616116524 8 6.23223305 2.38388348 0.616116524 0.616116524 2.38388348 6.23223305 8"></polygon></g></g></svg></a></div>
+                <div class="w-commerce-commercecartformwrapper">
+                  <form data-node-type="commerce-cart-form" class="w-commerce-commercecartform {% if cart.item_count == 0 %}udesly-display-none{% endif %}">
+                    
+                    
+                    <ul role="list" class="mini-cart-list" udy-el="items-list">
+                      {% for item in cart.items %}<li class="mini-cart-list-item">
+                        <div class="product-row">
+                          <div class="div-block-137"><img src="{{ item.product.featured_image.src | img_url: 'large' }}" alt="" class="image-32">
+                            <div class="div-block-142">
+                              <div class="cart-product-name">{{ item.product.title }}</div>
+                              <div class="cart-product-price">{{ item.price | money }}</div>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="text-block-82">{{ item.quantity }}</div>
+                          </div>
+                        </div>
+                      </li>{% endfor %}
+                    </ul>
+                    <div class="w-commerce-commercecartfooter {% if cart.item_count == 0 %}udesly-display-none{% endif %}" udy-el="cart-actions">
+                      <div class="w-commerce-commercecartlineitem popup-cart-line-item">
+                        <div class="popup-cart-subtotal-label">{{ 'customersaccount.DIV_14' | t }}</div>
+                        <div class="w-commerce-commercecartordervalue popup-cart-subtotal" udy-el="cart-total">{{ cart.total_price | money }}</div>
+                      </div>
+                      <div class="checkout-actions"><a href="/cart" value="Edit" data-node-type="cart-checkout-button" class="w-commerce-commercecartcheckoutbutton submit-button-2 cart-details" data-loading-text="Edit">{{ 'customersaccount.A_15' | t }}</a><a href="/checkout" value="Checkout" data-node-type="cart-checkout-button" class="w-commerce-commercecartcheckoutbutton submit-button-2 checkout" data-loading-text="Chekout">{{ 'customersaccount.A_16' | t }}</a></div>
+                    </div>
+                  </form>
+                  <div class="w-commerce-commercecartemptystate {% if cart.item_count != 0 %}udesly-display-none{% endif %}" udy-el="no-items-in-cart">
+                    <div class="text-block-84">{{ 'customersaccount.DIV_17' | t }}</div>
+                  </div>
+                  <div style="display:none" data-node-type="commerce-cart-error" class="w-commerce-commercecarterrorstate">
+                    <div class="w-cart-error-msg" data-w-cart-quantity-error="Product is not available in this quantity." data-w-cart-checkout-error="Checkout is disabled on this site." data-w-cart-general-error="Something went wrong when adding this item to the cart." data-w-cart-cart_order_min-error="Cart failed.">{{ 'customersaccount.DIV_18' | t }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <script id="mini-cart-template">
+          window.udeslyMiniCartTemplate = function(item) {
+            return `<li class="mini-cart-list-item" data-item-id="${item.id}">
+                        <div class="product-row">
+                          <div class="div-block-137"><img src="${item.image}" alt="" class="image-32">
+                            <div class="div-block-142">
+                              <div class="cart-product-name">${item.title}</div>
+                              <div class="cart-product-price">${item.price}</div>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="text-block-82">${item.quantity}</div>
+                          </div>
+                        </div>
+                      </li>`
+          }
+          </script></div>
+          <a href="/products/xialla" class="button-small header w-inline-block">
+            <div class="button-label">{{ 'customersaccount.DIV_19' | t }}</div>
+          </a>
+          <div class="menu-button-2 w-nav-button"><img src="{{ 'bars.svg' | asset_url }}" alt="" class="menu-icon-2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="heading-wrapper">
+      <h1>{{ 'customersaccount.H1_20' | t }}</h1>
+    </div>
+    <div class="my-account-wrapper">
+      <div class="div-block-138">
+        <div class="order-numebr-row-header">
+          <div class="order-number-header">{{ 'customersaccount.DIV_21' | t }}</div>
+        </div>
+        <div class="order-data-row-header">
+          <div class="order-date-header">{{ 'customersaccount.DIV_22' | t }}</div>
+        </div>
+        <div class="payment-status-row-header">
+          <div class="payment-status-header">{{ 'customersaccount.DIV_23' | t }}</div>
+        </div>
+        <div class="order-status-row-header">
+          <div class="fulfillment-status-header">{{ 'customersaccount.DIV_24' | t }}</div>
+        </div>
+        <div class="order-total-row-header">
+          <div class="item-total-header">{{ 'customersaccount.DIV_25' | t }}</div>
+        </div>
+      </div>
+      {% paginate customer.orders by settings.account_orders_limit %}<div class="orders---copy-this w-dyn-list">
+        {% unless customer.orders.size == 0 %}<div class="collection-list-2 w-dyn-items">
+          {% for order in customer.orders %}<div class="collection-item-2 w-dyn-item">
+            <div class="order-row---copy-this">
+              <div class="order-numebr-footer">
+                <a href="{{ order.customer_url }}" class="item-link---copy-this w-inline-block">
+                  <div>{{ order.name }}</div>
+                </a>
+              </div>
+              <div class="order-row-data">
+                <div class="item-date---copy-this">{{ order.created_at | date: format: 'abbreviated_date' }}</div>
+              </div>
+              <div class="order-row-data">
+                <div class="payment-status---copy-this">{{ order.financial_status_label }}</div>
+              </div>
+              <div class="order-row-data">
+                <div class="fulfillment-status---copy-this">{{ order.fulfillment_status_label }}</div>
+              </div>
+              <div class="order-row-data-right">
+                <div class="item-total---copy-this">{{ order.total_price | money }}</div>
+              </div>
+            </div>
+          </div>{% endfor %}
+        </div>
+        {% else %}<div class="empty-state w-dyn-empty">
+          <div class="div-block-39"></div>
+        </div>{% endunless %}
+      </div>{% endpaginate %}
+    </div>
+  </div>
+  <div class="section">
+    <div class="heading-wrapper">
+      <h1>{{ 'customersaccount.H1_26' | t }}</h1>
+      <div class="username---copy-this">{{ customer.name }}</div>
+      <div class="name-wrapper">
+        <div class="user-first-name---copy-this">{{ customer.first_name }}</div>
+        <div class="user-last-name---copy-this">{{ customer.last_name }}</div>
+      </div>
+      <div class="account-email---copy-this">{{ customer.email }}</div>
+      <address>
+        <div class="default-address---copy-this">{{ customer.default_address | format_address }}</div>
+      </address><a href="/account/logout" class="logout-link---copy-this">{{ 'customersaccount.A_27' | t }}</a></div>
+    <div class="my-account-wrapper"></div>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js?site=5eac0ded2d2f09a505faf644" type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="{{ 'webflow.js' | asset_url }}" type="text/javascript"></script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+  <!--  Stop iPhone from changing color of phone links  -->
+  <style>
+  a[href^=tel] {
+text-decoration:inherit;
+color: inherit;
+}
+</style>
+  <!--  End Stop iPhone   -->
+  <!--  Ellipsis style used for truncating search result item title  -->
+  <style>
+  .ellipsis {
+  text-overflow: ellipsis;
+}
+</style>
+  <!--  End Elipsis  -->
+
+{% include 'notifications' %}{{ 'udesly-shopify.min.js' | asset_url | script_tag }}

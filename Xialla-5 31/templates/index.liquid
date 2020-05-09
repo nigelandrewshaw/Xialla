@@ -1,0 +1,675 @@
+{% layout 'theme' %}
+      
+  <div data-collapse="medium" data-animation="default" data-duration="400" role="banner" class="navigation w-nav">
+    <div class="mainmenuwrap"><a href="/" id="w-node-f20facedcda8-cd55b9ef" aria-current="page" class="brand w-nav-brand w--current"><img src="{{ 'logo.png' | asset_url }}" width="44" alt="Xialla Logo" class="header-logo"></a>
+      <div id="w-node-f20facedcdaa-cd55b9ef" class="nav1-menu-wrap">
+        <div class="div-block-141">
+          <nav role="navigation" class="nav-menu-2 w-nav-menu"><a href="#" class="nav-link-2 dropdown-home w-nav-link">{{ 'index.A_0' | t }}</a>
+            <div data-delay="0" class="nav-link-2 w-dropdown">
+              <div class="dropdown-toggle w-dropdown-toggle">
+                <div class="menu-text">{{ 'index.DIV_1' | t }}</div>
+                <div class="icon w-icon-dropdown-toggle"></div>
+              </div>
+              <nav class="dropdown-list-2 w-dropdown-list"><a href="/pages/how-it-works" class="menuitem dropdown w-dropdown-link">{{ 'index.A_2' | t }}</a><a href="/pages/clinical-trials" class="menuitem dropdown w-dropdown-link">{{ 'index.A_3' | t }}</a><a href="/pages/about" page="default" class="menuitem dropdown w-dropdown-link">{{ 'index.A_4' | t }}</a><a href="/pages/contact" class="menuitem dropdown w-dropdown-link">{{ 'index.A_5' | t }}</a></nav>
+            </div>
+            <div data-delay="0" class="nav-link-2 w-dropdown">
+              <div class="dropdown-toggle w-dropdown-toggle">
+                <div class="menu-text">{{ 'index.DIV_6' | t }}</div>
+                <div class="icon w-icon-dropdown-toggle"></div>
+              </div>
+              <nav class="dropdown-list-2 w-dropdown-list"><a href="/products/xialla" class="menuitem dropdown w-dropdown-link">{{ 'index.A_7' | t }}</a><a href="/products/adhesive-pads-30-pack" class="menuitem dropdown w-dropdown-link">{{ 'index.A_8' | t }}</a></nav>
+            </div>
+            <div data-delay="0" class="nav-link-2 w-dropdown">
+              <div class="dropdown-toggle w-dropdown-toggle">
+                <div class="menu-text">{{ 'index.DIV_9' | t }}</div>
+                <div class="icon w-icon-dropdown-toggle"></div>
+              </div>
+              <nav class="dropdown-list-2 w-dropdown-list"><a href="/pages/help" class="menuitem dropdown w-dropdown-link">{{ 'index.A_10' | t }}</a><a href="/pages/customer-support" class="menuitem dropdown w-dropdown-link">{{ 'index.A_11' | t }}</a><a href="/pages/instructions-for-use" class="menuitem dropdown w-dropdown-link">{{ 'index.A_12' | t }}</a></nav>
+            </div>
+          </nav>
+        </div>
+        <div class="div-block-140">
+          <div data-node-type="commerce-cart-wrapper" data-open-product="" data-wf-cart-type="rightDropdown" data-wf-cart-query="" data-wf-page-link-href-prefix="" class="w-commerce-commercecartwrapper cart-3">
+            <a href="#" data-node-type="commerce-cart-open-link" class="w-commerce-commercecartopenlink button cc-cart w-inline-block">
+              <div class="w-commerce-commercecartopenlinkcount cart-quantity-2" udy-el="cart-count">{{ cart.item_count }}</div>
+            </a>
+            <div data-node-type="commerce-cart-container-wrapper" style="display:none" class="w-commerce-commercecartcontainerwrapper w-commerce-commercecartcontainerwrapper--cartType-rightDropdown">
+              <div data-node-type="commerce-cart-container" class="w-commerce-commercecartcontainer cart-container-3">
+                <div class="w-commerce-commercecartheader">
+                  <h4 class="w-commerce-commercecartheading">{{ 'index.H4_13' | t }}</h4><a href="#" data-node-type="commerce-cart-close-link" class="w-commerce-commercecartcloselink close-button-3 w-inline-block"><svg width="16px" height="16px" viewBox="0 0 16 16"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill-rule="nonzero" fill="#333333"><polygon points="6.23223305 8 0.616116524 13.6161165 2.38388348 15.3838835 8 9.76776695 13.6161165 15.3838835 15.3838835 13.6161165 9.76776695 8 15.3838835 2.38388348 13.6161165 0.616116524 8 6.23223305 2.38388348 0.616116524 0.616116524 2.38388348 6.23223305 8"></polygon></g></g></svg></a></div>
+                <div class="w-commerce-commercecartformwrapper">
+                  <form data-node-type="commerce-cart-form" class="w-commerce-commercecartform {% if cart.item_count == 0 %}udesly-display-none{% endif %}">
+                    
+                    
+                    <ul role="list" class="mini-cart-list" udy-el="items-list">
+                      {% for item in cart.items %}<li class="mini-cart-list-item">
+                        <div class="product-row">
+                          <div class="div-block-137"><img src="{{ item.product.featured_image.src | img_url: 'large' }}" alt="" class="image-32">
+                            <div class="div-block-142">
+                              <div class="cart-product-name">{{ item.product.title }}</div>
+                              <div class="cart-product-price">{{ item.price | money }}</div>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="text-block-82">{{ item.quantity }}</div>
+                          </div>
+                        </div>
+                      </li>{% endfor %}
+                    </ul>
+                    <div class="w-commerce-commercecartfooter {% if cart.item_count == 0 %}udesly-display-none{% endif %}" udy-el="cart-actions">
+                      <div class="w-commerce-commercecartlineitem popup-cart-line-item">
+                        <div class="popup-cart-subtotal-label">{{ 'index.DIV_14' | t }}</div>
+                        <div class="w-commerce-commercecartordervalue popup-cart-subtotal" udy-el="cart-total">{{ cart.total_price | money }}</div>
+                      </div>
+                      <div class="checkout-actions"><a href="/cart" value="Edit" data-node-type="cart-checkout-button" class="w-commerce-commercecartcheckoutbutton submit-button-2 cart-details" data-loading-text="Edit">{{ 'index.A_15' | t }}</a><a href="/checkout" value="Checkout" data-node-type="cart-checkout-button" class="w-commerce-commercecartcheckoutbutton submit-button-2 checkout" data-loading-text="Chekout">{{ 'index.A_16' | t }}</a></div>
+                    </div>
+                  </form>
+                  <div class="w-commerce-commercecartemptystate {% if cart.item_count != 0 %}udesly-display-none{% endif %}" udy-el="no-items-in-cart">
+                    <div class="text-block-84">{{ 'index.DIV_17' | t }}</div>
+                  </div>
+                  <div style="display:none" data-node-type="commerce-cart-error" class="w-commerce-commercecarterrorstate">
+                    <div class="w-cart-error-msg" data-w-cart-quantity-error="Product is not available in this quantity." data-w-cart-checkout-error="Checkout is disabled on this site." data-w-cart-general-error="Something went wrong when adding this item to the cart." data-w-cart-cart_order_min-error="Cart failed.">{{ 'index.DIV_18' | t }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <script id="mini-cart-template">
+          window.udeslyMiniCartTemplate = function(item) {
+            return `<li class="mini-cart-list-item" data-item-id="${item.id}">
+                        <div class="product-row">
+                          <div class="div-block-137"><img src="${item.image}" alt="" class="image-32">
+                            <div class="div-block-142">
+                              <div class="cart-product-name">${item.title}</div>
+                              <div class="cart-product-price">${item.price}</div>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="text-block-82">${item.quantity}</div>
+                          </div>
+                        </div>
+                      </li>`
+          }
+          </script></div>
+          <a href="/products/xialla" class="button-small header w-inline-block">
+            <div class="button-label">{{ 'index.DIV_19' | t }}</div>
+          </a>
+          <div class="menu-button-2 w-nav-button"><img src="{{ 'bars.svg' | asset_url }}" alt="" class="menu-icon-2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero6 hero6-home3">
+    <div class="section-normal">
+      <div class="w-layout-grid hero-grid">
+        <div id="w-node-d0ea6b0bb445-d144e4e3" class="hero-content">
+          <div class="hero-text">
+            <h1 class="hero-big-text">{{ 'index.H1_20' | t }}</h1>
+            <div class="div-block-84">
+              <div class="div-block-85">
+                <div class="hero-subtitle">{{ 'index.DIV_21' | t }}</div>
+              </div>
+            </div>
+          </div>
+          <a data-w-id="5624eb99-2c20-d9af-264c-d0ea6b0bb44d" href="/products/xialla" class="button-small yellow-small w-inline-block">
+            <div class="button-label">{{ 'index.DIV_22' | t }}</div><img src="https://uploads-ssl.webflow.com/5dd07020edfe6a1f4c682c0e/5dd07020edfe6a7c87682c3d_arrow-dark%402x.svg" alt="" class="button-arrow"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="home-dark-wrap-section">
+    <div class="section-normal">
+      <div class="footer-wrapper">
+        <div class="content vertical">
+          <div class="div-block-147">
+            <h3 class="size3-text narrow white">{{ 'index.H3_23' | t }}</h3>
+            <div class="w-layout-grid content34-grid">
+              <div id="w-node-d0ea6b0bb458-d144e4e3" class="home-info-item-wrap">
+                <div class="home-deco-dot"></div>
+                <div>
+                  <h4 class="size4-text white top-clear">{{ 'index.H4_24' | t }}</h4>
+                  <p class="paragraph-normal white">{{ 'index.P_25' | t }}</p>
+                  <div class="text-label-2 home-text-label testimonial">{{ 'index.DIV_26' | t }}</div>
+                </div>
+              </div>
+              <div id="w-node-d0ea6b0bb461-d144e4e3" class="home-info-item-wrap">
+                <div class="home-deco-dot"></div>
+                <div>
+                  <h4 class="size4-text white top-clear">{{ 'index.H4_27' | t }}</h4>
+                  <p class="paragraph-normal white">{{ 'index.P_28' | t }}<br></p>
+                  <div class="text-label-2 home-text-label testimonial">{{ 'index.DIV_29' | t }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="component-divider"></div>
+  <div class="section-normal">
+    <div class="section-normal xialla">
+      <div class="w-layout-grid content6-grid">
+        <div id="w-node-d0ea6b0bb46f-d144e4e3" class="home3-centered-headline-wrap">
+          <h2 class="size1-text">{{ 'index.H2_30' | t }}</h2>
+          <p class="paragraph-normal">{{ 'index.P_31' | t }}<br></p><img src="{{ 'xialla.png' | asset_url }}" srcset="{{ 'xialla-p-500.png' | asset_url }} 500w, {{ 'xialla.png' | asset_url }} 520w" sizes="(max-width: 479px) 60vw, (max-width: 991px) 19vw, 89.953125px" alt="" class="homeproduct"></div>
+      </div>
+    </div>
+  </div>
+  <div class="component-divider-40"></div>
+  <div class="section-normal text-container-centered">
+    <h2 class="size2-text top-clear">{{ 'index.H2_32' | t }}</h2><img src="{{ 'Gerald-E-Text-What-an-Invention.png' | asset_url }}" srcset="{{ 'Gerald-E-Text-What-an-Invention-p-500.png' | asset_url }} 500w, {{ 'Gerald-E-Text-What-an-Invention.png' | asset_url }} 750w" sizes="(max-width: 479px) 91vw, 390px" alt="" class="image-34">
+    <div class="text-label-6">{{ 'index.DIV_33' | t }}</div>
+  </div>
+  <div class="component-divider"></div>
+  <div class="section-normal">
+    <div class="content6-grid">
+      <div id="w-node-d0ea6b0bb47f-d144e4e3" class="home3-centered-headline-wrap">
+        <h2 class="size2-text top-clear">{{ 'index.H2_34' | t }}</h2>
+        <p class="paragraph-normal">{{ 'index.P_35' | t }}<br></p>
+        <p class="paragraph-normal">{{ 'index.P_36' | t }}<br></p>
+        <div data-animation="outin" data-nav-spacing="10" data-duration="500" data-infinite="1" class="slider w-slider">
+          <div class="w-slider-mask">
+            <div class="w-slide"><img src="{{ '00-How-it-works-title.jpg' | asset_url }}" alt="How Xialla works" srcset="{{ '00-How-it-works-title-p-500.jpeg' | asset_url }} 500w, {{ '00-How-it-works-title-p-800.jpeg' | asset_url }} 800w, {{ '00-How-it-works-title.jpg' | asset_url }} 1330w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 408px, 510px" class="carousel-image"></div>
+            <div class="w-slide"><img src="{{ 'slider2.jpg' | asset_url }}" alt="Slipping the ring over the penis" srcset="{{ 'slider2-p-800.jpeg' | asset_url }} 800w, {{ 'slider2-p-1080.jpeg' | asset_url }} 1080w, {{ 'slider2.jpg' | asset_url }} 1330w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 408px, 510px" class="carousel-image">
+              <div class="slider-caption">{{ 'index.DIV_37' | t }}</div>
+            </div>
+            <div class="w-slide"><img src="{{ 'slider3.jpg' | asset_url }}" alt="Stretching the loop around the scrotum" srcset="{{ 'slider3-p-800.jpeg' | asset_url }} 800w, {{ 'slider3-p-1080.jpeg' | asset_url }} 1080w, {{ 'slider3.jpg' | asset_url }} 1330w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 408px, 510px" class="carousel-image">
+              <div class="slider-caption">{{ 'index.DIV_38' | t }}</div>
+            </div>
+            <div class="w-slide"><img src="{{ 'slider4.jpg' | asset_url }}" alt="Securing the band to the adhesive pad" srcset="{{ 'slider4-p-800.jpeg' | asset_url }} 800w, {{ 'slider4-p-1080.jpeg' | asset_url }} 1080w, {{ 'slider4.jpg' | asset_url }} 1330w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 408px, 510px" class="carousel-image">
+              <div class="slider-caption">{{ 'index.DIV_39' | t }}</div>
+            </div>
+            <div class="w-slide"><img src="{{ 'slider5.jpg' | asset_url }}" alt="Getting back to amazing sex with Xialla" srcset="{{ 'slider5-p-800.jpeg' | asset_url }} 800w, {{ 'slider5-p-1080.jpeg' | asset_url }} 1080w, {{ 'slider5.jpg' | asset_url }} 1330w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 408px, 510px" class="carousel-image">
+              <div class="slider-caption">{{ 'index.DIV_40' | t }}</div>
+            </div>
+          </div>
+          <div class="left-arrow w-slider-arrow-left">
+            <div class="slider-icon w-icon-slider-left"></div>
+          </div>
+          <div class="right-arrow w-slider-arrow-right">
+            <div class="slider-icon w-icon-slider-right"></div>
+          </div>
+          <div class="slide-nav w-slider-nav w-slider-nav-invert w-round"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="component-divider"></div>
+  <div class="section-normal xx">
+    <div class="w-layout-grid social-icons-grid"><img src="{{ 'impact-winner.png' | asset_url }}" width="113" alt="Impact Awards Winner" id="w-node-d0ea6b0bb4a8-d144e4e3"><img src="{{ 'Google-Customer-Reviews-Top.png' | asset_url }}" width="127" alt="Google Customer Reviews" id="w-node-d0ea6b0bb4a6-d144e4e3"><img src="{{ 'Designed-in-Canada-Top.png' | asset_url }}" width="126" alt="Invented and designed in Canada" id="w-node-d0ea6b0bb4a7-d144e4e3"><img src="{{ 'abeomics.png' | asset_url }}" width="126" alt="Abeomics official research partner" id="w-node-d0ea6b0bb4a9-d144e4e3"></div>
+  </div>
+  <div class="component-divider"></div>
+  <div class="section-normal">
+    <div class="w-layout-grid headline-grid">
+      <div id="w-node-d0ea6b0bb4ad-d144e4e3" class="div-block-86">
+        <h2 class="size2-text narrow">{{ 'index.H2_41' | t }}</h2>
+        <p class="paragraph-normal">{{ 'index.P_42' | t }}<br></p>
+      </div>
+    </div>
+  </div>
+  <div class="component-divider"></div>
+  <div class="section-normal">
+    <div class="w-layout-grid content36-grid">
+      <div id="w-node-d0ea6b0bb4b6-d144e4e3" class="content36-headline-wrap">
+        <h2 class="size2-text">{{ 'index.H2_43' | t }}</h2>
+      </div>
+      <div id="w-node-d0ea6b0bb4bb-d144e4e3"><img src="https://uploads-ssl.webflow.com/5dd07020edfe6a1f4c682c0e/5e88828ca6b2c10cd1a0de0f_nigel-shaw.jpg" alt="Nigel Shaw" class="hometeamphoto">
+        <h2 class="size4-text-2">{{ 'index.H2_44' | t }}</h2>
+        <h3 class="text-label">{{ 'index.H3_45' | t }}</h3>
+        <p class="paragraph-normal">{{ 'index.P_46' | t }}<br></p>
+      </div>
+      <div id="w-node-d0ea6b0bb4c4-d144e4e3" class="div-block-39">
+        <div class="content36-author-pic content36-pic3"></div>
+        <div class="text-label-2">{{ 'index.DIV_47' | t }}</div>
+        <div class="size4-text-2">{{ 'index.DIV_48' | t }}<br></div>
+        <p class="paragraph-71">{{ 'index.P_49' | t }}<br></p>
+      </div>
+      <div id="w-node-d0ea6b0bb4ce-d144e4e3"><img src="https://uploads-ssl.webflow.com/5dd07020edfe6a1f4c682c0e/5e88840ebebe7d7ccdfe0eae_anthony-bella.jpg" alt="Anthony Bella" class="hometeamphoto">
+        <h2 class="size4-text-2">{{ 'index.H2_50' | t }}</h2>
+        <h3 class="text-label">{{ 'index.H3_51' | t }}</h3>
+        <p class="paragraph-normal">{{ 'index.P_52' | t }}<br></p>
+      </div>
+    </div>
+  </div>
+  <div class="component-divider"></div>
+  <div class="section-normal">
+    <div class="w-layout-grid content7-grid"><a href="#" id="w-node-d0ea6b0bb4e3-d144e4e3" class="video-lightbox-3 w-inline-block w-lightbox"><img src="{{ 'video-thumb.jpg' | asset_url }}" width="531" alt="Xialla Introduction Video Thumbnail" class="video-image-2"><script type="application/json" class="w-json">{"items":[{"type":"video","originalUrl":"https://youtu.be/BNLordPKX6Q?autoplay=1&rel=0","url":"https://youtu.be/BNLordPKX6Q?autoplay=1&rel=0","html":"<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FBNLordPKX6Q%3Ffeature%3Doembed%26rel%3D0%26autoplay%3D1&url=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DBNLordPKX6Q&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FBNLordPKX6Q%2Fhqdefault.jpg&args=rel%3D0%7Cautoplay%3D1&key=96f1f04c5f4143bcb0f2e68c87d65feb&autoplay=1&type=text%2Fhtml&schema=youtube\" width=\"940\" height=\"528\" scrolling=\"no\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\"></iframe>","thumbnailUrl":"https://i.ytimg.com/vi/BNLordPKX6Q/hqdefault.jpg","width":940,"height":528}]}</script></a>
+      <div id="w-node-d0ea6b0bb4e5-d144e4e3" class="content7-content-wrap">
+        <div class="div-block-2">
+          <h2 class="size1-text-long">{{ 'index.H2_53' | t }}</h2>
+          <div class="paragraph-normal">{{ 'index.DIV_54' | t }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="component-divider"></div>
+  <div class="footer-wrapper">
+    <div class="hero5">
+      <div class="hero5-image-wrap hero5-image1">
+        <div class="w-layout-grid hero5-grid">
+          <div id="w-node-d0ea6b0bb4f0-d144e4e3" class="hero5-content">
+            <div class="hero5-text">
+              <h4 class="size1-text size1-top-clear">{{ 'index.H4_55' | t }}</h4>
+              <div class="hero-subtitle">{{ 'index.DIV_56' | t }}</div>
+            </div>
+          </div>
+          <a id="w-node-d0ea6b0bb4f6-d144e4e3" data-w-id="5624eb99-2c20-d9af-264c-d0ea6b0bb4f6" href="/products/xialla" class="button-small yellow-small wide w-inline-block">
+            <div class="button-label">{{ 'index.DIV_57' | t }}</div><img src="https://uploads-ssl.webflow.com/5dd07020edfe6a1f4c682c0e/5dd07020edfe6a7c87682c3d_arrow-dark%402x.svg" alt="" class="button-arrow"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="component-divider"></div>
+  <div class="section-normal">
+    <div id="benefits" class="content-wrapper-centered">
+      <div class="text-container-centered benefits">
+        <h2 class="size1-text">{{ 'index.H2_58' | t }}</h2>
+        <h3 class="text-label">{{ 'index.H3_59' | t }}</h3>
+      </div>
+      <div class="centered-mobile-wrap home">
+        <div class="label-list right-align">
+          <div class="diagram-label-wrapper-benefits">
+            <div class="deco-dot benefits"></div>
+            <div class="label-block-left-align">
+              <h4 class="size4-text">{{ 'index.H4_60' | t }}</h4>
+              <div class="paragraph-normal">{{ 'index.DIV_61' | t }}</div>
+            </div>
+          </div>
+          <div class="diagram-label-wrapper-benefits">
+            <div class="deco-dot benefits"></div>
+            <div class="label-block-left-align">
+              <h4 class="size4-text">{{ 'index.H4_62' | t }}</h4>
+              <div class="paragraph-normal">{{ 'index.DIV_63' | t }}</div>
+            </div>
+          </div>
+          <div class="diagram-label-wrapper-benefits">
+            <div class="deco-dot benefits"></div>
+            <div class="label-block-left-align">
+              <h4 class="size4-text">{{ 'index.H4_64' | t }}</h4>
+              <div class="paragraph-normal">{{ 'index.DIV_65' | t }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="label-list">
+          <div class="diagram-label-wrapper-benefits">
+            <div class="deco-dot benefits"></div>
+            <div class="label-block-left-align">
+              <h4 class="size4-text">{{ 'index.H4_66' | t }}</h4>
+              <div class="paragraph-normal">{{ 'index.DIV_67' | t }}</div>
+            </div>
+          </div>
+          <div class="diagram-label-wrapper-benefits">
+            <div class="deco-dot benefits"></div>
+            <div class="label-block-left-align">
+              <h4 class="size4-text">{{ 'index.H4_68' | t }}</h4>
+              <div class="paragraph-normal">{{ 'index.DIV_69' | t }}</div>
+            </div>
+          </div>
+          <div class="diagram-label-wrapper-benefits">
+            <div class="deco-dot benefits"></div>
+            <div class="label-block-left-align">
+              <h4 class="size4-text">{{ 'index.H4_70' | t }}</h4>
+              <div class="paragraph-normal">{{ 'index.DIV_71' | t }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="benefits-to-partner" class="component-divider"></div>
+  <div class="section-normal">
+    <div id="benefits" class="content-wrapper-centered">
+      <div class="text-container-centered benefits">
+        <h2 class="size1-text">{{ 'index.H2_72' | t }}</h2>
+        <h3 class="text-label">{{ 'index.H3_73' | t }}</h3>
+      </div>
+      <div class="centered-mobile-wrap home">
+        <div class="label-list right-align">
+          <div class="diagram-label-wrapper-benefits">
+            <div class="deco-dot benefits"></div>
+            <div class="label-block-left-align">
+              <h4 class="size4-text">{{ 'index.H4_74' | t }}</h4>
+              <div class="paragraph-normal">{{ 'index.DIV_75' | t }}</div>
+            </div>
+          </div>
+          <div class="diagram-label-wrapper-benefits">
+            <div class="deco-dot benefits"></div>
+            <div class="label-block-left-align">
+              <h4 class="size4-text">{{ 'index.H4_76' | t }}</h4>
+              <div class="paragraph-normal">{{ 'index.DIV_77' | t }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="label-list">
+          <div class="diagram-label-wrapper-benefits">
+            <div class="deco-dot benefits"></div>
+            <div class="label-block-left-align">
+              <h4 class="size4-text">{{ 'index.H4_78' | t }}</h4>
+              <div class="paragraph-normal">{{ 'index.DIV_79' | t }}</div>
+            </div>
+          </div>
+          <div class="diagram-label-wrapper-benefits">
+            <div class="deco-dot benefits"></div>
+            <div class="label-block-left-align">
+              <h4 class="size4-text">{{ 'index.H4_80' | t }}</h4>
+              <div class="paragraph-normal">{{ 'index.DIV_81' | t }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="component-divider"></div>
+      <div class="centeredhome">
+        <h1 class="size1-text-long size1-top-clear centered regular">{{ 'index.H1_82' | t }}</h1>
+      </div>
+    </div>
+  </div>
+  <div class="section-normal">
+    <div class="w-layout-grid content3-grid">
+      <div id="w-node-d0ea6b0bb55c-d144e4e3" class="panel-and-text-wrapper"><img src="{{ 'healthy-erection.jpg' | asset_url }}" alt="Healthy Erection" class="howitworks">
+        <div class="header-and-text-combo">
+          <h3 class="size4-text">{{ 'index.H3_83' | t }}</h3>
+          <div class="paragraph-normal">{{ 'index.DIV_84' | t }}</div>
+        </div>
+      </div>
+      <div id="w-node-d0ea6b0bb565-d144e4e3" class="panel-and-text-wrapper"><img src="{{ 'existing-solutions.jpg' | asset_url }}" alt="Existing Erectile Dysfunction Solutions" class="howitworks">
+        <div class="header-and-text-combo">
+          <h3 class="size4-text">{{ 'index.H3_85' | t }}</h3>
+          <div class="paragraph-normal">{{ 'index.DIV_86' | t }}</div>
+        </div>
+      </div>
+      <div id="w-node-d0ea6b0bb56e-d144e4e3" class="panel-and-text-wrapper"><img src="{{ 'xialla-difference.jpg' | asset_url }}" alt="The Difference of Xialla" class="howitworks">
+        <div class="header-and-text-combo">
+          <h3 class="size4-text">{{ 'index.H3_87' | t }}</h3>
+          <div class="paragraph-normal">{{ 'index.DIV_88' | t }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="component-divider"></div>
+  <div class="section-normal">
+    <div class="w-layout-grid content12-grid-2">
+      <div id="w-node-d0ea6b0bb57a-d144e4e3" class="content12-headline-wrap">
+        <h2 class="size1-text">{{ 'index.H2_89' | t }}</h2>
+      </div>
+      <div id="w-node-d0ea6b0bb57f-d144e4e3" class="compare-block"><img src="{{ 'penis-rings.jpg' | asset_url }}" alt="Penis rings" class="compare-image">
+        <div class="content12-description-wrap">
+          <div class="deco-dot deco-dot-centered"></div>
+          <div class="content12-image-description">
+            <h4 class="size4-text">{{ 'index.H4_90' | t }}</h4>
+            <div class="paragraph-semi-bold size5-full-clear">{{ 'index.DIV_91' | t }}</div>
+            <p class="paragraph-normal">{{ 'index.P_92' | t }}</p>
+          </div>
+        </div>
+      </div>
+      <div id="w-node-d0ea6b0bb58a-d144e4e3" class="compare-block"><img src="{{ 'drugs-injections.jpg' | asset_url }}" alt="Drugs and injections icon" class="compare-image">
+        <div class="content12-description-wrap">
+          <div class="deco-dot deco-dot-centered"></div>
+          <div class="content12-image-description">
+            <h4 class="size4-text">{{ 'index.H4_93' | t }}</h4>
+            <div class="paragraph-semi-bold size5-full-clear">{{ 'index.DIV_94' | t }}</div>
+            <p class="paragraph-normal">{{ 'index.P_95' | t }}</p>
+          </div>
+        </div>
+      </div>
+      <div id="w-node-d0ea6b0bb595-d144e4e3" class="compare-block"><img src="{{ 'pumps.jpg' | asset_url }}" alt="Pump icon" class="compare-image">
+        <div class="content12-description-wrap">
+          <div class="deco-dot deco-dot-centered"></div>
+          <div class="content12-image-description">
+            <h4 class="size4-text">{{ 'index.H4_96' | t }}</h4>
+            <div class="paragraph-semi-bold size5-full-clear">{{ 'index.DIV_97' | t }}</div>
+            <p class="paragraph-normal">{{ 'index.P_98' | t }}</p>
+          </div>
+        </div>
+      </div>
+      <div id="w-node-d0ea6b0bb5a0-d144e4e3" class="compare-block"><img src="{{ 'xialla.jpeg' | asset_url }}" alt="Xialla product icon" class="compare-image">
+        <div class="content12-description-wrap">
+          <div class="deco-dot deco-dot-centered"></div>
+          <div class="content12-image-description">
+            <h4 class="size4-text">{{ 'index.H4_99' | t }}</h4>
+            <div class="paragraph-semi-bold size5-full-clear">{{ 'index.DIV_100' | t }}</div>
+            <p class="paragraph-normal">{{ 'index.P_101' | t }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="component-divider"></div>
+  <div class="section-normal">
+    <div class="w-layout-grid cta3-grid">
+      <div id="w-node-d0ea6b0bb5ae-d144e4e3" class="cta3-content">
+        <div class="cta3-headline-wrap">
+          <h2 class="size1-text">{{ 'index.H2_102' | t }}</h2>
+          <p class="paragraph-normal">{{ 'index.P_103' | t }}</p>
+        </div>
+        <a href="/pages/info-kit" data-w-id="5624eb99-2c20-d9af-264c-d0ea6b0bb5b6" class="submit-button w-inline-block">
+          <div class="button-label-2">{{ 'index.DIV_104' | t }}</div><img src="https://uploads-ssl.webflow.com/5dd06dd0033682d635ef5dd5/5dd06dd0033682d21aef5e02_Arrow%402x.svg" alt="" class="button-arrow-2"></a>
+      </div>
+      <div id="w-node-d0ea6b0bb5ba-d144e4e3" class="cta3-pictures-feed"><img src="{{ 'couples.jpg' | asset_url }}" alt="Couples"></div>
+    </div>
+  </div>
+  <div class="component-divider"></div>
+  <div class="section-normal">
+    <div class="content-wrapper-centered">
+      <div class="w-container">
+        <div class="text-container-centered">
+          <h2 class="size1-text">{{ 'index.H2_105' | t }}</h2>
+          <h3 class="text-label">{{ 'index.H3_106' | t }}</h3>
+        </div>
+        <div class="enrich-lives-content"><img src="{{ 'happycouple1.jpg' | asset_url }}" alt="Happy Couple" class="image-22">
+          <div class="enrich-lives-content-1-right">
+            <h4 class="size4-text">{{ 'index.H4_107' | t }}</h4>
+            <div class="paragraph-normal">{{ 'index.DIV_108' | t }}</div><img src="{{ 'Invented-and-Designed-in-Canada.png' | asset_url }}" alt="Made in Canada" srcset="{{ 'Invented-and-Designed-in-Canada-p-500.png' | asset_url }} 500w, {{ 'Invented-and-Designed-in-Canada.png' | asset_url }} 530w" sizes="(max-width: 479px) 82vw, (max-width: 767px) 265px, (max-width: 991px) 27vw, 265px" class="image-14"></div>
+        </div>
+        <div class="enrich-lives-content-2">
+          <div class="enrich-lives-content-2-left">
+            <h4 class="size4-text">{{ 'index.H4_109' | t }}</h4>
+            <div class="paragraph-normal">{{ 'index.DIV_110' | t }}</div><img src="{{ 'Google-Customer-Reviews.png' | asset_url }}" alt="Google Customer Reviews Logo" class="image-15"></div><img src="{{ 'happycouple2.jpg' | asset_url }}" alt="Happy Couple" class="image-22"></div>
+      </div>
+    </div>
+  </div>
+  <div class="component-divider"></div>
+  <div class="section-normal">
+    <div class="content-wrapper">
+      <div class="div-block-88">
+        <div class="text-container-centered">
+          <h2 class="size1-text">{{ 'index.H2_111' | t }}</h2>
+        </div>
+      </div>
+      <div class="faq-block">
+        <div class="content29-qa-item-wrap">
+          <div class="deco-dot q-a"></div>
+          <div class="q-a-item">
+            <div class="text-label-4 text-label-sub">{{ 'index.DIV_112' | t }}</div>
+            <p class="paragraph-normal">{{ 'index.P_113' | t }}</p>
+          </div>
+        </div>
+        <div class="content29-qa-item-wrap">
+          <div class="deco-dot q-a"></div>
+          <div class="q-a-item">
+            <div class="text-label-4 text-label-sub">{{ 'index.DIV_114' | t }}</div>
+            <p class="paragraph-normal">{{ 'index.P_115' | t }}</p>
+          </div>
+        </div>
+        <div class="content29-qa-item-wrap">
+          <div class="deco-dot q-a"></div>
+          <div class="q-a-item">
+            <div class="text-label-4 text-label-sub">{{ 'index.DIV_116' | t }}</div>
+            <p class="paragraph-normal">{{ 'index.P_117' | t }}</p>
+          </div>
+        </div>
+        <div class="content29-qa-item-wrap">
+          <div class="deco-dot q-a"></div>
+          <div class="q-a-item">
+            <div class="text-label-4 text-label-sub">{{ 'index.DIV_118' | t }}</div>
+            <p class="paragraph-normal">{{ 'index.P_119' | t }}</p>
+          </div>
+        </div>
+        <div class="content29-qa-item-wrap">
+          <div class="deco-dot q-a"></div>
+          <div class="q-a-item">
+            <div class="text-label-4 text-label-sub">{{ 'index.DIV_120' | t }}</div>
+            <p class="paragraph-normal">{{ 'index.P_121' | t }}</p>
+          </div>
+        </div>
+        <div class="content29-qa-item-wrap">
+          <div class="deco-dot q-a"></div>
+          <div class="q-a-item">
+            <div class="text-label-4 text-label-sub">{{ 'index.DIV_122' | t }}</div>
+            <p class="paragraph-normal">{{ 'index.P_123' | t }}</p>
+          </div>
+        </div>
+        <div class="content29-qa-item-wrap">
+          <div class="deco-dot q-a"></div>
+          <div class="q-a-item">
+            <div class="text-label-4 text-label-sub">{{ 'index.DIV_124' | t }}</div>
+            <p class="paragraph-normal">{{ 'index.P_125' | t }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-container-centered">
+        <a href="/pages/help" data-w-id="5624eb99-2c20-d9af-264c-d0ea6b0bb5e8" class="button-small transparent w-inline-block">
+          <div class="button-label">{{ 'index.DIV_126' | t }}</div><img src="https://uploads-ssl.webflow.com/5dd07020edfe6a1f4c682c0e/5dd07020edfe6a7c87682c3d_arrow-dark%402x.svg" alt="" class="button-arrow"></a>
+      </div>
+    </div>
+  </div>
+  <div class="component-divider"></div>
+  <div class="section-normal">
+    <div class="content-wrapper-centered">
+      <div class="text-container-centered">
+        <div class="size1-text">{{ 'index.DIV_127' | t }}</div>
+        <div class="text-label text-label-sub">{{ 'index.DIV_128' | t }}</div>
+      </div>
+      <div class="nigel-pic"></div>
+      <p class="paragraph-normal centered">{{ 'index.P_129' | t }}</p>
+      <p class="paragraph-normal centered">{{ 'index.P_130' | t }}</p>
+      <div class="text-container-centered"><img src="{{ 'nigelshaw-signature.png' | asset_url }}" alt="Nigel Shawn Signature" class="nigel-signature">
+        <p class="text-label-3 bold">{{ 'index.P_131' | t }}<br><a href="https://ca.linkedin.com/in/nigelshawexia" target="_blank"></a></p>
+        <p class="text-label-3">{{ 'index.P_132' | t }}<a href="mailto:nigel@xialla.com" class="text-link">{{ 'index.A_133' | t }}</a><br><a href="https://ca.linkedin.com/in/nigelshawexia" target="_blank"></a></p>
+        <p class="text-label-3">{{ 'index.P_134' | t }}<br><a href="https://ca.linkedin.com/in/nigelshawexia" target="_blank"></a></p>
+        <p class="text-label-3">{{ 'index.P_135' | t }}<a href="https://www.linkedin.com/in/nigelshawexia/" rel="nofollow" target="_blank" class="text-link">{{ 'index.A_136' | t }}</a><br><a href="https://ca.linkedin.com/in/nigelshawexia" target="_blank"></a></p>
+      </div>
+    </div>
+  </div>
+  <div class="component-divider"></div>
+  <div class="footer-wrapper m80">
+    <div class="section-normal">
+      <div class="w-layout-grid content34-grid">
+        <h4 id="w-node-ca5d8bc79501-8bc794fe" class="size3-text">{{ 'index.H4_137' | t }}</h4>
+        <div id="w-node-ca5d8bc79503-8bc794fe" class="content34-item-wrap">
+          <div class="deco-dot"></div>
+          <div>
+            <h4 class="text-label-4 text-label-sub">{{ 'index.H4_138' | t }}</h4>
+            <p class="paragraph-normal">{{ 'index.P_139' | t }}</p>
+          </div>
+        </div>
+        <div id="w-node-ca5d8bc7950a-8bc794fe" class="content34-item-wrap">
+          <div class="deco-dot"></div>
+          <div>
+            <h4 class="text-label-4 text-label-sub">{{ 'index.H4_140' | t }}</h4>
+            <p class="paragraph-normal">{{ 'index.P_141' | t }}</p>
+          </div>
+        </div>
+        <div id="w-node-ca5d8bc79511-8bc794fe" class="content34-item-wrap">
+          <div class="deco-dot"></div>
+          <div>
+            <h4 class="text-label-4 text-label-sub">{{ 'index.H4_142' | t }}</h4>
+            <p class="paragraph-normal">{{ 'index.P_143' | t }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-wrapper">
+    <div class="footer-simple-top-section">
+      <div class="section-normal yellow">
+        <div class="w-layout-grid footer2-form-grid">
+          <div id="w-node-28661869d3bf-1869d3bb">
+            <h5 class="size3-text size3-full-clear white">{{ 'index.H5_144' | t }}</h5>
+            <div class="paragraph-semi-bold size5-full-clear white">{{ 'index.DIV_145' | t }}</div>
+            <div class="paragraph-semi-bold">{{ 'index.DIV_146' | t }}</div>
+          </div>
+          <div id="w-node-28661869d3c6-1869d3bb">
+            <div id="subscribe-form" class="footer2-form w-form">
+              <form id="subscribe-form" name="wf-form-Subscribe-Form" data-name="Subscribe Form" method="post" class="footer2-form-wrap"><input type="email" class="form-field w-input" maxlength="256" name="Email-3" data-name="Email 3" placeholder="Enter your email" id="Email-3" required=""><input type="submit" value="Subscribe" data-wait="Please wait..." class="submit-button subscribe w-button"></form>
+              <div class="success-message w-form-done">
+                <div>{{ 'index.DIV_147' | t }}</div>
+              </div>
+              <div class="error-message w-form-fail">
+                <div>{{ 'index.DIV_148' | t }}</div>
+              </div>
+            </div>
+            <div class="html-embed w-embed w-script">
+              <!-- [if lte IE 8]>
+<script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/v2-legacy.js"></script>
+<![endif] -->
+              <script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/v2.js"></script>
+              <script>
+  hbspt.forms.create({
+	portalId: "5835628",
+	formId: "db3b18f8-9c57-4abc-a8c8-441b2f4d1674"
+});
+</script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-wrapper">
+    <div class="footer-simple-top-section">
+      <div class="section-normal">
+        <div class="content">
+          <div class="footer2-divider"></div>
+        </div>
+        <div class="w-layout-grid footer2-links-grid">
+          <div id="w-node-8fe8825a9ceb-825a9cd1"><a href="#" class="footer-logo-link w-inline-block"><img src="{{ 'logo.png' | asset_url }}" alt="Xialla Logo"></a>
+            <div class="footer2-links-wrap">
+              <h6 class="text-label-footer-links-header">{{ 'index.H6_149' | t }}</h6><a href="mailto:press@xialla.com" class="footer2-link">{{ 'index.A_150' | t }}</a></div>
+          </div>
+          <div id="w-node-8fe8825a9cf3-825a9cd1" class="footer2-links-wrap">
+            <h6 class="text-label-footer-links-header">{{ 'index.H6_151' | t }}</h6><a href="/products/xialla" class="footer2-link">{{ 'index.A_152' | t }}</a><a href="/products/adhesive-pads-30-pack" class="footer2-link">{{ 'index.A_153' | t }}</a><a href="/pages/refund-policy" class="footer2-link">{{ 'index.A_154' | t }}</a></div>
+          <div id="w-node-8fe8825a9cfc-825a9cd1" class="footer2-links-wrap">
+            <h6 class="text-label-footer-links-header">{{ 'index.H6_155' | t }}</h6><a href="/pages/how-it-works" class="footer2-link">{{ 'index.A_156' | t }}</a><a href="/pages/instructions-for-use" class="footer2-link">{{ 'index.A_157' | t }}</a><a href="/pages/clinical-trials" class="footer2-link">{{ 'index.A_158' | t }}</a><a href="/pages/info-kit" class="footer2-link">{{ 'index.A_159' | t }}</a><a href="/pages/about" class="footer2-link">{{ 'index.A_160' | t }}</a></div>
+          <div id="w-node-8fe8825a9d09-825a9cd1" class="footer2-links-wrap">
+            <h6 class="text-label-footer-links-header">{{ 'index.H6_161' | t }}</h6><a href="/pages/customer-support" class="footer2-link">{{ 'index.A_162' | t }}</a><a href="/pages/help" class="footer2-link">{{ 'index.A_163' | t }}</a><a href="/pages/contact" class="footer2-link">{{ 'index.A_164' | t }}</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="section-normal">
+      <div class="w-layout-grid footer2-bottom-grid">
+        <div id="w-node-8fe8825a9d14-825a9cd1" class="footer2-bottom-left-column">
+          <div class="deco-dot deco-dot-centered"></div>
+          <div class="paragraph-small-2">{{ 'index.DIV_165' | t }}<br>{{ 'index.DIV_166' | t }}<br>{{ 'index.DIV_167' | t }}<br>{{ 'index.DIV_168' | t }}<br>{{ 'index.DIV_169' | t }}<a href="/practitioners#clinical-studies"><br></a></div>
+        </div>
+        <div id="w-node-8fe8825a9d23-825a9cd1">
+          <div class="footer2-disclaimer-wrap">
+            <p class="paragraph">{{ 'index.P_170' | t }}</p>
+          </div>
+        </div>
+        <div id="w-node-8fe8825a9d27-825a9cd1" class="div-block-137"><a href="/pages/terms-of-service" class="footer-small-link">{{ 'index.A_171' | t }}</a><a href="/pages/privacy-policy" class="footer-small-link">{{ 'index.A_172' | t }}</a></div>
+      </div>
+    </div>
+  </div>
+  <a data-w-id="1c1c4019-2db4-f389-1940-137aa3098d22" href="/products/xialla" class="button-sticky-footer-2 w-inline-block">
+    <div class="button-label-3">{{ 'index.DIV_173' | t }}</div>
+  </a>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js?site=5eac0ded2d2f09a505faf644" type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="{{ 'webflow.js' | asset_url }}" type="text/javascript"></script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+  <!--  Stop iPhone from changing color of phone links  -->
+  <style>
+  a[href^=tel] {
+text-decoration:inherit;
+color: inherit;
+}
+</style>
+  <!--  End Stop iPhone   -->
+  <!--  Ellipsis style used for truncating search result item title  -->
+  <style>
+  .ellipsis {
+  text-overflow: ellipsis;
+}
+</style>
+  <!--  End Elipsis  -->
+
+{% include 'notifications' %}{{ 'udesly-shopify.min.js' | asset_url | script_tag }}

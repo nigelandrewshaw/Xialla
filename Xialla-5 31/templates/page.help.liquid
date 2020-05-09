@@ -1,0 +1,527 @@
+{% layout 'page.help' %}
+      
+  <div data-collapse="medium" data-animation="default" data-duration="400" role="banner" class="navigation w-nav">
+    <div class="mainmenuwrap"><a href="/" id="w-node-f20facedcda8-cd55b9ef" class="brand w-nav-brand"><img src="{{ 'logo.png' | asset_url }}" width="44" alt="Xialla Logo" class="header-logo"></a>
+      <div id="w-node-f20facedcdaa-cd55b9ef" class="nav1-menu-wrap">
+        <div class="div-block-141">
+          <nav role="navigation" class="nav-menu-2 w-nav-menu"><a href="#" class="nav-link-2 dropdown-home w-nav-link">{{ 'help.A_0' | t }}</a>
+            <div data-delay="0" class="nav-link-2 w-dropdown">
+              <div class="dropdown-toggle w-dropdown-toggle">
+                <div class="menu-text">{{ 'help.DIV_1' | t }}</div>
+                <div class="icon w-icon-dropdown-toggle"></div>
+              </div>
+              <nav class="dropdown-list-2 w-dropdown-list"><a href="/pages/how-it-works" class="menuitem dropdown w-dropdown-link">{{ 'help.A_2' | t }}</a><a href="/pages/clinical-trials" class="menuitem dropdown w-dropdown-link">{{ 'help.A_3' | t }}</a><a href="/pages/about" page="default" class="menuitem dropdown w-dropdown-link">{{ 'help.A_4' | t }}</a><a href="/pages/contact" class="menuitem dropdown w-dropdown-link">{{ 'help.A_5' | t }}</a></nav>
+            </div>
+            <div data-delay="0" class="nav-link-2 w-dropdown">
+              <div class="dropdown-toggle w-dropdown-toggle">
+                <div class="menu-text">{{ 'help.DIV_6' | t }}</div>
+                <div class="icon w-icon-dropdown-toggle"></div>
+              </div>
+              <nav class="dropdown-list-2 w-dropdown-list"><a href="/products/xialla" class="menuitem dropdown w-dropdown-link">{{ 'help.A_7' | t }}</a><a href="/products/adhesive-pads-30-pack" class="menuitem dropdown w-dropdown-link">{{ 'help.A_8' | t }}</a></nav>
+            </div>
+            <div data-delay="0" class="nav-link-2 w-dropdown">
+              <div class="dropdown-toggle w-dropdown-toggle">
+                <div class="menu-text">{{ 'help.DIV_9' | t }}</div>
+                <div class="icon w-icon-dropdown-toggle"></div>
+              </div>
+              <nav class="dropdown-list-2 w-dropdown-list"><a href="/pages/help" aria-current="page" class="menuitem dropdown w-dropdown-link w--current">{{ 'help.A_10' | t }}</a><a href="/pages/customer-support" class="menuitem dropdown w-dropdown-link">{{ 'help.A_11' | t }}</a><a href="/pages/instructions-for-use" class="menuitem dropdown w-dropdown-link">{{ 'help.A_12' | t }}</a></nav>
+            </div>
+          </nav>
+        </div>
+        <div class="div-block-140">
+          <div data-node-type="commerce-cart-wrapper" data-open-product="" data-wf-cart-type="rightDropdown" data-wf-cart-query="" data-wf-page-link-href-prefix="" class="w-commerce-commercecartwrapper cart-3">
+            <a href="#" data-node-type="commerce-cart-open-link" class="w-commerce-commercecartopenlink button cc-cart w-inline-block">
+              <div class="w-commerce-commercecartopenlinkcount cart-quantity-2" udy-el="cart-count">{{ cart.item_count }}</div>
+            </a>
+            <div data-node-type="commerce-cart-container-wrapper" style="display:none" class="w-commerce-commercecartcontainerwrapper w-commerce-commercecartcontainerwrapper--cartType-rightDropdown">
+              <div data-node-type="commerce-cart-container" class="w-commerce-commercecartcontainer cart-container-3">
+                <div class="w-commerce-commercecartheader">
+                  <h4 class="w-commerce-commercecartheading">{{ 'help.H4_13' | t }}</h4><a href="#" data-node-type="commerce-cart-close-link" class="w-commerce-commercecartcloselink close-button-3 w-inline-block"><svg width="16px" height="16px" viewBox="0 0 16 16"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill-rule="nonzero" fill="#333333"><polygon points="6.23223305 8 0.616116524 13.6161165 2.38388348 15.3838835 8 9.76776695 13.6161165 15.3838835 15.3838835 13.6161165 9.76776695 8 15.3838835 2.38388348 13.6161165 0.616116524 8 6.23223305 2.38388348 0.616116524 0.616116524 2.38388348 6.23223305 8"></polygon></g></g></svg></a></div>
+                <div class="w-commerce-commercecartformwrapper">
+                  <form data-node-type="commerce-cart-form" class="w-commerce-commercecartform {% if cart.item_count == 0 %}udesly-display-none{% endif %}">
+                    
+                    
+                    <ul role="list" class="mini-cart-list" udy-el="items-list">
+                      {% for item in cart.items %}<li class="mini-cart-list-item">
+                        <div class="product-row">
+                          <div class="div-block-137"><img src="{{ item.product.featured_image.src | img_url: 'large' }}" alt="" class="image-32">
+                            <div class="div-block-142">
+                              <div class="cart-product-name">{{ item.product.title }}</div>
+                              <div class="cart-product-price">{{ item.price | money }}</div>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="text-block-82">{{ item.quantity }}</div>
+                          </div>
+                        </div>
+                      </li>{% endfor %}
+                    </ul>
+                    <div class="w-commerce-commercecartfooter {% if cart.item_count == 0 %}udesly-display-none{% endif %}" udy-el="cart-actions">
+                      <div class="w-commerce-commercecartlineitem popup-cart-line-item">
+                        <div class="popup-cart-subtotal-label">{{ 'help.DIV_14' | t }}</div>
+                        <div class="w-commerce-commercecartordervalue popup-cart-subtotal" udy-el="cart-total">{{ cart.total_price | money }}</div>
+                      </div>
+                      <div class="checkout-actions"><a href="/cart" value="Edit" data-node-type="cart-checkout-button" class="w-commerce-commercecartcheckoutbutton submit-button-2 cart-details" data-loading-text="Edit">{{ 'help.A_15' | t }}</a><a href="/checkout" value="Checkout" data-node-type="cart-checkout-button" class="w-commerce-commercecartcheckoutbutton submit-button-2 checkout" data-loading-text="Chekout">{{ 'help.A_16' | t }}</a></div>
+                    </div>
+                  </form>
+                  <div class="w-commerce-commercecartemptystate {% if cart.item_count != 0 %}udesly-display-none{% endif %}" udy-el="no-items-in-cart">
+                    <div class="text-block-84">{{ 'help.DIV_17' | t }}</div>
+                  </div>
+                  <div style="display:none" data-node-type="commerce-cart-error" class="w-commerce-commercecarterrorstate">
+                    <div class="w-cart-error-msg" data-w-cart-quantity-error="Product is not available in this quantity." data-w-cart-checkout-error="Checkout is disabled on this site." data-w-cart-general-error="Something went wrong when adding this item to the cart." data-w-cart-cart_order_min-error="Cart failed.">{{ 'help.DIV_18' | t }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <script id="mini-cart-template">
+          window.udeslyMiniCartTemplate = function(item) {
+            return `<li class="mini-cart-list-item" data-item-id="${item.id}">
+                        <div class="product-row">
+                          <div class="div-block-137"><img src="${item.image}" alt="" class="image-32">
+                            <div class="div-block-142">
+                              <div class="cart-product-name">${item.title}</div>
+                              <div class="cart-product-price">${item.price}</div>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="text-block-82">${item.quantity}</div>
+                          </div>
+                        </div>
+                      </li>`
+          }
+          </script></div>
+          <a href="/products/xialla" class="button-small header w-inline-block">
+            <div class="button-label">{{ 'help.DIV_19' | t }}</div>
+          </a>
+          <div class="menu-button-2 w-nav-button"><img src="{{ 'bars.svg' | asset_url }}" alt="" class="menu-icon-2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="Hero" class="section">
+    <div class="w-layout-grid grid">
+      <div id="w-node-323391349bb2-ba0a71e5" class="elements-headline-wrap">
+        <h1 class="page-title">{{ 'help.H1_20' | t }}</h1>
+        <div>
+          <div class="div-block-90">
+            <form action="/search" class="search-2 w-form" method="get" role="search"><input type="search" class="search-input-2 w-input" maxlength="256" name="q" placeholder="Search entire site" id="search" required="" value="{{ search.terms | escape }}"><input type="submit" value="Go" class="button-search w-button"></form>
+            <div class="cta11-item-wrap">
+              <a href="/pages/customer-support" data-w-id="662d6aa7-2ecf-7507-ccdf-323391349bbb" class="button-small-2 transparent fixed-width-and-border w-inline-block">
+                <div class="button-label-3 instructions">{{ 'help.DIV_21' | t }}</div><img src="https://uploads-ssl.webflow.com/5dd07020edfe6a1f4c682c0e/5dd07020edfe6a7c87682c3d_arrow-dark%402x.svg" alt="" class="button-arrow"></a>
+              <a href="/pages/instructions-for-use" data-w-id="662d6aa7-2ecf-7507-ccdf-323391349bbf" class="button-small-2 transparent fixed-width-and-border w-inline-block">
+                <div class="button-label-3 instructions">{{ 'help.DIV_22' | t }}</div><img src="https://uploads-ssl.webflow.com/5dd07020edfe6a1f4c682c0e/5dd07020edfe6a7c87682c3d_arrow-dark%402x.svg" alt="" class="button-arrow"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="content-wrapper help">
+      <div class="div-block-88">
+        <h2>{{ 'help.H2_23' | t }}</h2>
+      </div>
+      <div data-duration-in="300" data-duration-out="100" class="w-tabs">
+        <div class="tabs-menu w-tab-menu">
+          <a data-w-tab="Tab 1" class="tab-link w-inline-block w-tab-link">
+            <div>{{ 'help.DIV_24' | t }}</div>
+          </a>
+          <a data-w-tab="Tab 2" class="tab-link w-inline-block w-tab-link">
+            <div>{{ 'help.DIV_25' | t }}</div>
+          </a>
+          <a data-w-tab="Tab 3" class="tab-link w-inline-block w-tab-link">
+            <div>{{ 'help.DIV_26' | t }}</div>
+          </a>
+          <a data-w-tab="Tab 4" class="tab-link w-inline-block w-tab-link">
+            <div>{{ 'help.DIV_27' | t }}</div>
+          </a>
+          <a data-w-tab="Tab 5" class="tab-link w-inline-block w-tab-link w--current">
+            <div>{{ 'help.DIV_28' | t }}</div>
+          </a>
+        </div>
+        <div id="tabs-content" class="w-tab-content">
+          <div data-w-tab="Tab 1" id="tab-pane" class="w-tab-pane">
+            <div class="faq-block">
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_29' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_30' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_31' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_32' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_33' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_34' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_35' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_36' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_37' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_38' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_39' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_40' | t }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div data-w-tab="Tab 2" class="w-tab-pane">
+            <div class="faq-block">
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_41' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_42' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_43' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_44' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_45' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_46' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_47' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_48' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_49' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_50' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_51' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_52' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_53' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_54' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_55' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_56' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_57' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_58' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_59' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_60' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_61' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_62' | t }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div data-w-tab="Tab 3" class="w-tab-pane">
+            <div class="faq-block">
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_63' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_64' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_65' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_66' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_67' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_68' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_69' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_70' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_71' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_72' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_73' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_74' | t }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div data-w-tab="Tab 4" class="w-tab-pane">
+            <div class="faq-block">
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_75' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_76' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_77' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_78' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_79' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_80' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_81' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_82' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_83' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_84' | t }}<a href="mailto:help@xialla.com">{{ 'help.A_85' | t }}</a>{{ 'help.P_86' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_87' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_88' | t }}<a href="mailto:help@xialla.com">{{ 'help.A_89' | t }}</a>{{ 'help.P_90' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_91' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_92' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_93' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_94' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_95' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_96' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_97' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_98' | t }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div data-w-tab="Tab 5" class="w-tab-pane w--tab-active">
+            <div class="faq-block">
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_99' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_100' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_101' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_102' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_103' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_104' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_105' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_106' | t }}</p>
+                </div>
+              </div>
+              <div class="content29-qa-item-wrap">
+                <div class="deco-dot q-a"></div>
+                <div class="q-a-item">
+                  <div class="text-label-4 text-label-sub">{{ 'help.DIV_107' | t }}</div>
+                  <p class="paragraph-normal">{{ 'help.P_108' | t }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="component-divider-2"></div>
+  <div class="footer-wrapper">
+    <div class="footer-simple-top-section">
+      <div class="section-normal yellow">
+        <div class="w-layout-grid footer2-form-grid">
+          <div id="w-node-28661869d3bf-1869d3bb">
+            <h5 class="size3-text size3-full-clear white">{{ 'help.H5_109' | t }}</h5>
+            <div class="paragraph-semi-bold size5-full-clear white">{{ 'help.DIV_110' | t }}</div>
+            <div class="paragraph-semi-bold">{{ 'help.DIV_111' | t }}</div>
+          </div>
+          <div id="w-node-28661869d3c6-1869d3bb">
+            <div id="subscribe-form" class="footer2-form w-form">
+              <form id="subscribe-form" name="wf-form-Subscribe-Form" data-name="Subscribe Form" method="post" class="footer2-form-wrap"><input type="email" class="form-field w-input" maxlength="256" name="Email-3" data-name="Email 3" placeholder="Enter your email" id="Email-3" required=""><input type="submit" value="Subscribe" data-wait="Please wait..." class="submit-button subscribe w-button"></form>
+              <div class="success-message w-form-done">
+                <div>{{ 'help.DIV_112' | t }}</div>
+              </div>
+              <div class="error-message w-form-fail">
+                <div>{{ 'help.DIV_113' | t }}</div>
+              </div>
+            </div>
+            <div class="html-embed w-embed w-script">
+              <!-- [if lte IE 8]>
+<script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/v2-legacy.js"></script>
+<![endif] -->
+              <script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/v2.js"></script>
+              <script>
+  hbspt.forms.create({
+	portalId: "5835628",
+	formId: "db3b18f8-9c57-4abc-a8c8-441b2f4d1674"
+});
+</script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-wrapper">
+    <div class="footer-simple-top-section">
+      <div class="section-normal">
+        <div class="content">
+          <div class="footer2-divider"></div>
+        </div>
+        <div class="w-layout-grid footer2-links-grid">
+          <div id="w-node-8fe8825a9ceb-825a9cd1"><a href="#" class="footer-logo-link w-inline-block"><img src="{{ 'logo.png' | asset_url }}" alt="Xialla Logo"></a>
+            <div class="footer2-links-wrap">
+              <h6 class="text-label-footer-links-header">{{ 'help.H6_114' | t }}</h6><a href="mailto:press@xialla.com" class="footer2-link">{{ 'help.A_115' | t }}</a></div>
+          </div>
+          <div id="w-node-8fe8825a9cf3-825a9cd1" class="footer2-links-wrap">
+            <h6 class="text-label-footer-links-header">{{ 'help.H6_116' | t }}</h6><a href="/products/xialla" class="footer2-link">{{ 'help.A_117' | t }}</a><a href="/products/adhesive-pads-30-pack" class="footer2-link">{{ 'help.A_118' | t }}</a><a href="/pages/refund-policy" class="footer2-link">{{ 'help.A_119' | t }}</a></div>
+          <div id="w-node-8fe8825a9cfc-825a9cd1" class="footer2-links-wrap">
+            <h6 class="text-label-footer-links-header">{{ 'help.H6_120' | t }}</h6><a href="/pages/how-it-works" class="footer2-link">{{ 'help.A_121' | t }}</a><a href="/pages/instructions-for-use" class="footer2-link">{{ 'help.A_122' | t }}</a><a href="/pages/clinical-trials" class="footer2-link">{{ 'help.A_123' | t }}</a><a href="/pages/info-kit" class="footer2-link">{{ 'help.A_124' | t }}</a><a href="/pages/about" class="footer2-link">{{ 'help.A_125' | t }}</a></div>
+          <div id="w-node-8fe8825a9d09-825a9cd1" class="footer2-links-wrap">
+            <h6 class="text-label-footer-links-header">{{ 'help.H6_126' | t }}</h6><a href="/pages/customer-support" class="footer2-link">{{ 'help.A_127' | t }}</a><a href="/pages/help" aria-current="page" class="footer2-link w--current">{{ 'help.A_128' | t }}</a><a href="/pages/contact" class="footer2-link">{{ 'help.A_129' | t }}</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="section-normal">
+      <div class="w-layout-grid footer2-bottom-grid">
+        <div id="w-node-8fe8825a9d14-825a9cd1" class="footer2-bottom-left-column">
+          <div class="deco-dot deco-dot-centered"></div>
+          <div class="paragraph-small-2">{{ 'help.DIV_130' | t }}<br>{{ 'help.DIV_131' | t }}<br>{{ 'help.DIV_132' | t }}<br>{{ 'help.DIV_133' | t }}<br>{{ 'help.DIV_134' | t }}<a href="/practitioners#clinical-studies"><br></a></div>
+        </div>
+        <div id="w-node-8fe8825a9d23-825a9cd1">
+          <div class="footer2-disclaimer-wrap">
+            <p class="paragraph">{{ 'help.P_135' | t }}</p>
+          </div>
+        </div>
+        <div id="w-node-8fe8825a9d27-825a9cd1" class="div-block-137"><a href="/pages/terms-of-service" class="footer-small-link">{{ 'help.A_136' | t }}</a><a href="/pages/privacy-policy" class="footer-small-link">{{ 'help.A_137' | t }}</a></div>
+      </div>
+    </div>
+  </div>
+  <a data-w-id="1c1c4019-2db4-f389-1940-137aa3098d22" href="/products/xialla" class="button-sticky-footer-2 w-inline-block">
+    <div class="button-label-3">{{ 'help.DIV_138' | t }}</div>
+  </a>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js?site=5eac0ded2d2f09a505faf644" type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="{{ 'webflow.js' | asset_url }}" type="text/javascript"></script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+  <!--  Stop iPhone from changing color of phone links  -->
+  <style>
+  a[href^=tel] {
+text-decoration:inherit;
+color: inherit;
+}
+</style>
+  <!--  End Stop iPhone   -->
+  <!--  Ellipsis style used for truncating search result item title  -->
+  <style>
+  .ellipsis {
+  text-overflow: ellipsis;
+}
+</style>
+  <!--  End Elipsis  -->
+
+{% include 'notifications' %}{{ 'udesly-shopify.min.js' | asset_url | script_tag }}

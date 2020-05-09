@@ -1,0 +1,360 @@
+{% layout 'page.how-it-works' %}
+      
+  <div data-collapse="medium" data-animation="default" data-duration="400" role="banner" class="navigation w-nav">
+    <div class="mainmenuwrap"><a href="/" id="w-node-f20facedcda8-cd55b9ef" class="brand w-nav-brand"><img src="{{ 'logo.png' | asset_url }}" width="44" alt="Xialla Logo" class="header-logo"></a>
+      <div id="w-node-f20facedcdaa-cd55b9ef" class="nav1-menu-wrap">
+        <div class="div-block-141">
+          <nav role="navigation" class="nav-menu-2 w-nav-menu"><a href="#" class="nav-link-2 dropdown-home w-nav-link">{{ 'how-it-works.A_0' | t }}</a>
+            <div data-delay="0" class="nav-link-2 w-dropdown">
+              <div class="dropdown-toggle w-dropdown-toggle">
+                <div class="menu-text">{{ 'how-it-works.DIV_1' | t }}</div>
+                <div class="icon w-icon-dropdown-toggle"></div>
+              </div>
+              <nav class="dropdown-list-2 w-dropdown-list"><a href="/pages/how-it-works" aria-current="page" class="menuitem dropdown w-dropdown-link w--current">{{ 'how-it-works.A_2' | t }}</a><a href="/pages/clinical-trials" class="menuitem dropdown w-dropdown-link">{{ 'how-it-works.A_3' | t }}</a><a href="/pages/about" page="default" class="menuitem dropdown w-dropdown-link">{{ 'how-it-works.A_4' | t }}</a><a href="/pages/contact" class="menuitem dropdown w-dropdown-link">{{ 'how-it-works.A_5' | t }}</a></nav>
+            </div>
+            <div data-delay="0" class="nav-link-2 w-dropdown">
+              <div class="dropdown-toggle w-dropdown-toggle">
+                <div class="menu-text">{{ 'how-it-works.DIV_6' | t }}</div>
+                <div class="icon w-icon-dropdown-toggle"></div>
+              </div>
+              <nav class="dropdown-list-2 w-dropdown-list"><a href="/products/xialla" class="menuitem dropdown w-dropdown-link">{{ 'how-it-works.A_7' | t }}</a><a href="/products/adhesive-pads-30-pack" class="menuitem dropdown w-dropdown-link">{{ 'how-it-works.A_8' | t }}</a></nav>
+            </div>
+            <div data-delay="0" class="nav-link-2 w-dropdown">
+              <div class="dropdown-toggle w-dropdown-toggle">
+                <div class="menu-text">{{ 'how-it-works.DIV_9' | t }}</div>
+                <div class="icon w-icon-dropdown-toggle"></div>
+              </div>
+              <nav class="dropdown-list-2 w-dropdown-list"><a href="/pages/help" class="menuitem dropdown w-dropdown-link">{{ 'how-it-works.A_10' | t }}</a><a href="/pages/customer-support" class="menuitem dropdown w-dropdown-link">{{ 'how-it-works.A_11' | t }}</a><a href="/pages/instructions-for-use" class="menuitem dropdown w-dropdown-link">{{ 'how-it-works.A_12' | t }}</a></nav>
+            </div>
+          </nav>
+        </div>
+        <div class="div-block-140">
+          <div data-node-type="commerce-cart-wrapper" data-open-product="" data-wf-cart-type="rightDropdown" data-wf-cart-query="" data-wf-page-link-href-prefix="" class="w-commerce-commercecartwrapper cart-3">
+            <a href="#" data-node-type="commerce-cart-open-link" class="w-commerce-commercecartopenlink button cc-cart w-inline-block">
+              <div class="w-commerce-commercecartopenlinkcount cart-quantity-2" udy-el="cart-count">{{ cart.item_count }}</div>
+            </a>
+            <div data-node-type="commerce-cart-container-wrapper" style="display:none" class="w-commerce-commercecartcontainerwrapper w-commerce-commercecartcontainerwrapper--cartType-rightDropdown">
+              <div data-node-type="commerce-cart-container" class="w-commerce-commercecartcontainer cart-container-3">
+                <div class="w-commerce-commercecartheader">
+                  <h4 class="w-commerce-commercecartheading">{{ 'how-it-works.H4_13' | t }}</h4><a href="#" data-node-type="commerce-cart-close-link" class="w-commerce-commercecartcloselink close-button-3 w-inline-block"><svg width="16px" height="16px" viewBox="0 0 16 16"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill-rule="nonzero" fill="#333333"><polygon points="6.23223305 8 0.616116524 13.6161165 2.38388348 15.3838835 8 9.76776695 13.6161165 15.3838835 15.3838835 13.6161165 9.76776695 8 15.3838835 2.38388348 13.6161165 0.616116524 8 6.23223305 2.38388348 0.616116524 0.616116524 2.38388348 6.23223305 8"></polygon></g></g></svg></a></div>
+                <div class="w-commerce-commercecartformwrapper">
+                  <form data-node-type="commerce-cart-form" class="w-commerce-commercecartform {% if cart.item_count == 0 %}udesly-display-none{% endif %}">
+                    
+                    
+                    <ul role="list" class="mini-cart-list" udy-el="items-list">
+                      {% for item in cart.items %}<li class="mini-cart-list-item">
+                        <div class="product-row">
+                          <div class="div-block-137"><img src="{{ item.product.featured_image.src | img_url: 'large' }}" alt="" class="image-32">
+                            <div class="div-block-142">
+                              <div class="cart-product-name">{{ item.product.title }}</div>
+                              <div class="cart-product-price">{{ item.price | money }}</div>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="text-block-82">{{ item.quantity }}</div>
+                          </div>
+                        </div>
+                      </li>{% endfor %}
+                    </ul>
+                    <div class="w-commerce-commercecartfooter {% if cart.item_count == 0 %}udesly-display-none{% endif %}" udy-el="cart-actions">
+                      <div class="w-commerce-commercecartlineitem popup-cart-line-item">
+                        <div class="popup-cart-subtotal-label">{{ 'how-it-works.DIV_14' | t }}</div>
+                        <div class="w-commerce-commercecartordervalue popup-cart-subtotal" udy-el="cart-total">{{ cart.total_price | money }}</div>
+                      </div>
+                      <div class="checkout-actions"><a href="/cart" value="Edit" data-node-type="cart-checkout-button" class="w-commerce-commercecartcheckoutbutton submit-button-2 cart-details" data-loading-text="Edit">{{ 'how-it-works.A_15' | t }}</a><a href="/checkout" value="Checkout" data-node-type="cart-checkout-button" class="w-commerce-commercecartcheckoutbutton submit-button-2 checkout" data-loading-text="Chekout">{{ 'how-it-works.A_16' | t }}</a></div>
+                    </div>
+                  </form>
+                  <div class="w-commerce-commercecartemptystate {% if cart.item_count != 0 %}udesly-display-none{% endif %}" udy-el="no-items-in-cart">
+                    <div class="text-block-84">{{ 'how-it-works.DIV_17' | t }}</div>
+                  </div>
+                  <div style="display:none" data-node-type="commerce-cart-error" class="w-commerce-commercecarterrorstate">
+                    <div class="w-cart-error-msg" data-w-cart-quantity-error="Product is not available in this quantity." data-w-cart-checkout-error="Checkout is disabled on this site." data-w-cart-general-error="Something went wrong when adding this item to the cart." data-w-cart-cart_order_min-error="Cart failed.">{{ 'how-it-works.DIV_18' | t }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <script id="mini-cart-template">
+          window.udeslyMiniCartTemplate = function(item) {
+            return `<li class="mini-cart-list-item" data-item-id="${item.id}">
+                        <div class="product-row">
+                          <div class="div-block-137"><img src="${item.image}" alt="" class="image-32">
+                            <div class="div-block-142">
+                              <div class="cart-product-name">${item.title}</div>
+                              <div class="cart-product-price">${item.price}</div>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="text-block-82">${item.quantity}</div>
+                          </div>
+                        </div>
+                      </li>`
+          }
+          </script></div>
+          <a href="/products/xialla" class="button-small header w-inline-block">
+            <div class="button-label">{{ 'how-it-works.DIV_19' | t }}</div>
+          </a>
+          <div class="menu-button-2 w-nav-button"><img src="{{ 'bars.svg' | asset_url }}" alt="" class="menu-icon-2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="Hero" class="section">
+    <div class="w-layout-grid grid">
+      <div id="w-node-2a8fb0050d4a-e89992d4" class="elements-headline-wrap centeredmobile">
+        <h1 class="page-title">{{ 'how-it-works.H1_20' | t }}</h1>
+        <p class="size4-text-3">{{ 'how-it-works.P_21' | t }}<br></p>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="w-layout-grid content12-grid">
+      <div id="w-node-2a8fb0050d53-e89992d4" class="centered-mobile-wrap"><img src="https://uploads-ssl.webflow.com/5dd07020edfe6a1f4c682c0e/5e888cde516d8f0928ae83e0_healthy-erection.jpg" alt="Healthy Erection" class="howitworks">
+        <div class="content12-description-wrap">
+          <div class="deco-dot-2 deco-dot-centered"></div>
+          <div class="content12-image-description">
+            <h4>{{ 'how-it-works.H4_22' | t }}</h4>
+            <p class="text-label-5">{{ 'how-it-works.P_23' | t }}</p>
+            <p class="paragraph-normal">{{ 'how-it-works.P_24' | t }}</p>
+          </div>
+        </div>
+      </div>
+      <div id="w-node-2a8fb0050d5e-e89992d4" class="centered-mobile-wrap"><img src="{{ 'how-ed-happens.jpg' | asset_url }}" alt="How ED happens" class="howitworks">
+        <div class="content12-description-wrap">
+          <div class="deco-dot-2 deco-dot-centered"></div>
+          <div class="content12-image-description">
+            <h4>{{ 'how-it-works.H4_25' | t }}</h4>
+            <p class="text-label-5">{{ 'how-it-works.P_26' | t }}</p>
+            <p class="paragraph-normal">{{ 'how-it-works.P_27' | t }}</p>
+          </div>
+        </div>
+      </div>
+      <div id="w-node-2a8fb0050d69-e89992d4" class="centered-mobile-wrap"><img src="https://uploads-ssl.webflow.com/5dd07020edfe6a1f4c682c0e/5e888cdfbebe7d8666fe4eb8_existing-solutions.jpg" alt="Inflow solutions" class="howitworks">
+        <div class="content12-description-wrap">
+          <div class="deco-dot-2 deco-dot-centered"></div>
+          <div class="content12-image-description">
+            <h4>{{ 'how-it-works.H4_28' | t }}</h4>
+            <p class="text-label-5">{{ 'how-it-works.P_29' | t }}</p>
+            <p class="paragraph-normal">{{ 'how-it-works.P_30' | t }}</p>
+          </div>
+        </div>
+      </div>
+      <div id="w-node-2a8fb0050d74-e89992d4" class="centered-mobile-wrap"><img src="{{ 'outflow-solutions.jpg' | asset_url }}" alt="Outflow solutions" class="howitworks">
+        <div class="content12-description-wrap">
+          <div class="deco-dot-2 deco-dot-centered"></div>
+          <div class="content12-image-description">
+            <h4>{{ 'how-it-works.H4_31' | t }}</h4>
+            <p class="text-label-5">{{ 'how-it-works.P_32' | t }}</p>
+            <p class="paragraph-normal">{{ 'how-it-works.P_33' | t }}</p>
+          </div>
+        </div>
+      </div>
+      <div id="w-node-2a8fb0050d7f-e89992d4" class="centered-mobile-wrap"><img src="https://uploads-ssl.webflow.com/5dd07020edfe6a1f4c682c0e/5e888cde8a0cee773a7aa15f_xialla-difference.jpg" alt="Xialla" class="howitworks">
+        <div class="content12-description-wrap">
+          <div class="deco-dot-2 deco-dot-centered"></div>
+          <div class="content12-image-description">
+            <h4>{{ 'how-it-works.H4_34' | t }}</h4>
+            <p class="text-label-5">{{ 'how-it-works.P_35' | t }}</p>
+            <p class="paragraph-normal">{{ 'how-it-works.P_36' | t }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="component-divider-2"></div>
+  <div class="section">
+    <div class="content19-grid">
+      <div id="w-node-2a8fb0050d8d-e89992d4" class="content19-sticky-wrap"><a href="#" class="video-lightbox w-inline-block w-lightbox"><img src="{{ 'video.jpg' | asset_url }}" alt="Xialla Introduction Video Thumbnail" class="video-image-3"><script type="application/json" class="w-json">{"items":[{"type":"video","originalUrl":"https://youtu.be/9l5XoY5u9_g?autoplay=1&rel=0","url":"https://youtu.be/9l5XoY5u9_g?autoplay=1&rel=0","html":"<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2F9l5XoY5u9_g%3Ffeature%3Doembed%26rel%3D0%26autoplay%3D1&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D9l5XoY5u9_g&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2F9l5XoY5u9_g%2Fhqdefault.jpg&args=rel%3D0%7Cautoplay%3D1&key=96f1f04c5f4143bcb0f2e68c87d65feb&autoplay=1&type=text%2Fhtml&schema=youtube\" width=\"940\" height=\"528\" scrolling=\"no\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\"></iframe>","thumbnailUrl":"https://i.ytimg.com/vi/9l5XoY5u9_g/hqdefault.jpg","width":940,"height":528}]}</script></a></div>
+      <div id="w-node-2a8fb0050d90-e89992d4">
+        <div class="content19-items-wrap">
+          <div class="content19-headline-wrap">
+            <h2 class="size1-text-4">{{ 'how-it-works.H2_37' | t }}</h2>
+            <p class="paragraph-normal">{{ 'how-it-works.P_38' | t }}</p>
+          </div>
+          <div class="content19-item-wrap">
+            <div class="deco-dot-2"></div>
+            <div>
+              <div class="text-label-5 text-label-sub">{{ 'how-it-works.DIV_39' | t }}</div>
+              <p class="paragraph-normal">{{ 'how-it-works.P_40' | t }}</p>
+            </div>
+          </div>
+          <div class="content19-item-wrap">
+            <div class="deco-dot-2"></div>
+            <div>
+              <div class="text-label-5 text-label-sub">{{ 'how-it-works.DIV_41' | t }}<br></div>
+              <p class="paragraph-normal">{{ 'how-it-works.P_42' | t }}<br></p>
+            </div>
+          </div>
+          <div class="content19-item-wrap">
+            <div class="deco-dot-2"></div>
+            <div>
+              <div class="text-label-5 text-label-sub">{{ 'how-it-works.DIV_43' | t }}<br></div>
+              <p class="paragraph-normal">{{ 'how-it-works.P_44' | t }}<br></p>
+            </div>
+          </div>
+          <div class="content19-item-wrap">
+            <div class="deco-dot-2"></div>
+            <div>
+              <div class="text-label-5 text-label-sub">{{ 'how-it-works.DIV_45' | t }}<br></div>
+              <p class="paragraph-normal">{{ 'how-it-works.P_46' | t }}<br></p>
+            </div>
+          </div>
+          <div class="content19-item-wrap">
+            <div class="deco-dot-2"></div>
+            <div>
+              <div class="text-label-5 text-label-sub">{{ 'how-it-works.DIV_47' | t }}<br></div>
+              <p>{{ 'how-it-works.P_48' | t }}<br></p>
+            </div>
+          </div>
+          <div class="content19-item-wrap">
+            <div class="deco-dot-2"></div>
+            <div>
+              <div class="text-label-5 text-label-sub">{{ 'how-it-works.DIV_49' | t }}<br></div>
+              <p class="paragraph-normal">{{ 'how-it-works.P_50' | t }}<br></p>
+            </div>
+          </div>
+          <div class="content19-item-wrap">
+            <div class="deco-dot-2"></div>
+            <div>
+              <div class="text-label-5 text-label-sub">{{ 'how-it-works.DIV_51' | t }}<br></div>
+              <p class="paragraph-normal">{{ 'how-it-works.P_52' | t }}<br></p>
+            </div>
+          </div>
+          <div class="content19-item-wrap">
+            <div class="deco-dot-2"></div>
+            <div>
+              <div class="text-label-5 text-label-sub">{{ 'how-it-works.DIV_53' | t }}<br></div>
+              <p class="paragraph-normal">{{ 'how-it-works.P_54' | t }}<br></p>
+            </div>
+          </div>
+          <div class="content19-item-wrap">
+            <div class="deco-dot-2"></div>
+            <div>
+              <div class="text-label-5 text-label-sub">{{ 'how-it-works.DIV_55' | t }}<br></div>
+              <p class="paragraph-normal">{{ 'how-it-works.P_56' | t }}<br></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="component-divider-2"></div>
+  <div class="section">
+    <div class="content-wrapper">
+      <h2 class="size1-text-4">{{ 'how-it-works.H2_57' | t }}</h2>
+      <div class="rich-text-block w-richtext">
+        <p>{{ 'how-it-works.P_58' | t }}<br></p>
+        <h4>{{ 'how-it-works.H4_59' | t }}</h4>
+        <p>{{ 'how-it-works.P_60' | t }}</p>
+        <p>{{ 'how-it-works.P_61' | t }}<strong>{{ 'how-it-works.STRONG_62' | t }}</strong>{{ 'how-it-works.P_63' | t }}</p>
+        <p>{{ 'how-it-works.P_64' | t }}<strong>{{ 'how-it-works.STRONG_65' | t }}</strong>{{ 'how-it-works.P_66' | t }}</p>
+        <p>{{ 'how-it-works.P_67' | t }}<strong>{{ 'how-it-works.STRONG_68' | t }}</strong><br></p>
+        <h4>{{ 'how-it-works.H4_69' | t }}</h4>
+        <p>{{ 'how-it-works.P_70' | t }}<strong>{{ 'how-it-works.STRONG_71' | t }}</strong>{{ 'how-it-works.P_72' | t }}<br></p>
+        <h4>{{ 'how-it-works.H4_73' | t }}</h4>
+        <p>{{ 'how-it-works.P_74' | t }}<strong>{{ 'how-it-works.STRONG_75' | t }}</strong>{{ 'how-it-works.P_76' | t }}<br></p>
+        <h4>{{ 'how-it-works.H4_77' | t }}</h4>
+        <p>{{ 'how-it-works.P_78' | t }}<br></p>
+        <h4>{{ 'how-it-works.H4_79' | t }}</h4>
+        <p>{{ 'how-it-works.P_80' | t }}</p>
+        <p>{{ 'how-it-works.P_81' | t }}</p>
+        <p>{{ 'how-it-works.P_82' | t }}<br></p>
+        <h4>{{ 'how-it-works.H4_83' | t }}</h4>
+        <p>{{ 'how-it-works.P_84' | t }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="component-divider-2"></div>
+  <div class="footer-wrapper">
+    <div class="footer-simple-top-section">
+      <div class="section-normal yellow">
+        <div class="w-layout-grid footer2-form-grid">
+          <div id="w-node-28661869d3bf-1869d3bb">
+            <h5 class="size3-text size3-full-clear white">{{ 'how-it-works.H5_85' | t }}</h5>
+            <div class="paragraph-semi-bold size5-full-clear white">{{ 'how-it-works.DIV_86' | t }}</div>
+            <div class="paragraph-semi-bold">{{ 'how-it-works.DIV_87' | t }}</div>
+          </div>
+          <div id="w-node-28661869d3c6-1869d3bb">
+            <div id="subscribe-form" class="footer2-form w-form">
+              <form id="subscribe-form" name="wf-form-Subscribe-Form" data-name="Subscribe Form" method="post" class="footer2-form-wrap"><input type="email" class="form-field w-input" maxlength="256" name="Email-3" data-name="Email 3" placeholder="Enter your email" id="Email-3" required=""><input type="submit" value="Subscribe" data-wait="Please wait..." class="submit-button subscribe w-button"></form>
+              <div class="success-message w-form-done">
+                <div>{{ 'how-it-works.DIV_88' | t }}</div>
+              </div>
+              <div class="error-message w-form-fail">
+                <div>{{ 'how-it-works.DIV_89' | t }}</div>
+              </div>
+            </div>
+            <div class="html-embed w-embed w-script">
+              <!-- [if lte IE 8]>
+<script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/v2-legacy.js"></script>
+<![endif] -->
+              <script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/v2.js"></script>
+              <script>
+  hbspt.forms.create({
+	portalId: "5835628",
+	formId: "db3b18f8-9c57-4abc-a8c8-441b2f4d1674"
+});
+</script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-wrapper">
+    <div class="footer-simple-top-section">
+      <div class="section-normal">
+        <div class="content">
+          <div class="footer2-divider"></div>
+        </div>
+        <div class="w-layout-grid footer2-links-grid">
+          <div id="w-node-8fe8825a9ceb-825a9cd1"><a href="#" class="footer-logo-link w-inline-block"><img src="{{ 'logo.png' | asset_url }}" alt="Xialla Logo"></a>
+            <div class="footer2-links-wrap">
+              <h6 class="text-label-footer-links-header">{{ 'how-it-works.H6_90' | t }}</h6><a href="mailto:press@xialla.com" class="footer2-link">{{ 'how-it-works.A_91' | t }}</a></div>
+          </div>
+          <div id="w-node-8fe8825a9cf3-825a9cd1" class="footer2-links-wrap">
+            <h6 class="text-label-footer-links-header">{{ 'how-it-works.H6_92' | t }}</h6><a href="/products/xialla" class="footer2-link">{{ 'how-it-works.A_93' | t }}</a><a href="/products/adhesive-pads-30-pack" class="footer2-link">{{ 'how-it-works.A_94' | t }}</a><a href="/pages/refund-policy" class="footer2-link">{{ 'how-it-works.A_95' | t }}</a></div>
+          <div id="w-node-8fe8825a9cfc-825a9cd1" class="footer2-links-wrap">
+            <h6 class="text-label-footer-links-header">{{ 'how-it-works.H6_96' | t }}</h6><a href="/pages/how-it-works" aria-current="page" class="footer2-link w--current">{{ 'how-it-works.A_97' | t }}</a><a href="/pages/instructions-for-use" class="footer2-link">{{ 'how-it-works.A_98' | t }}</a><a href="/pages/clinical-trials" class="footer2-link">{{ 'how-it-works.A_99' | t }}</a><a href="/pages/info-kit" class="footer2-link">{{ 'how-it-works.A_100' | t }}</a><a href="/pages/about" class="footer2-link">{{ 'how-it-works.A_101' | t }}</a></div>
+          <div id="w-node-8fe8825a9d09-825a9cd1" class="footer2-links-wrap">
+            <h6 class="text-label-footer-links-header">{{ 'how-it-works.H6_102' | t }}</h6><a href="/pages/customer-support" class="footer2-link">{{ 'how-it-works.A_103' | t }}</a><a href="/pages/help" class="footer2-link">{{ 'how-it-works.A_104' | t }}</a><a href="/pages/contact" class="footer2-link">{{ 'how-it-works.A_105' | t }}</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="section-normal">
+      <div class="w-layout-grid footer2-bottom-grid">
+        <div id="w-node-8fe8825a9d14-825a9cd1" class="footer2-bottom-left-column">
+          <div class="deco-dot deco-dot-centered"></div>
+          <div class="paragraph-small-2">{{ 'how-it-works.DIV_106' | t }}<br>{{ 'how-it-works.DIV_107' | t }}<br>{{ 'how-it-works.DIV_108' | t }}<br>{{ 'how-it-works.DIV_109' | t }}<br>{{ 'how-it-works.DIV_110' | t }}<a href="/practitioners#clinical-studies"><br></a></div>
+        </div>
+        <div id="w-node-8fe8825a9d23-825a9cd1">
+          <div class="footer2-disclaimer-wrap">
+            <p class="paragraph">{{ 'how-it-works.P_111' | t }}</p>
+          </div>
+        </div>
+        <div id="w-node-8fe8825a9d27-825a9cd1" class="div-block-137"><a href="/pages/terms-of-service" class="footer-small-link">{{ 'how-it-works.A_112' | t }}</a><a href="/pages/privacy-policy" class="footer-small-link">{{ 'how-it-works.A_113' | t }}</a></div>
+      </div>
+    </div>
+  </div>
+  <a data-w-id="1c1c4019-2db4-f389-1940-137aa3098d22" href="/products/xialla" class="button-sticky-footer-2 w-inline-block">
+    <div class="button-label-3">{{ 'how-it-works.DIV_114' | t }}</div>
+  </a>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js?site=5eac0ded2d2f09a505faf644" type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="{{ 'webflow.js' | asset_url }}" type="text/javascript"></script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+  <!--  Stop iPhone from changing color of phone links  -->
+  <style>
+  a[href^=tel] {
+text-decoration:inherit;
+color: inherit;
+}
+</style>
+  <!--  End Stop iPhone   -->
+  <!--  Ellipsis style used for truncating search result item title  -->
+  <style>
+  .ellipsis {
+  text-overflow: ellipsis;
+}
+</style>
+  <!--  End Elipsis  -->
+
+{% include 'notifications' %}{{ 'udesly-shopify.min.js' | asset_url | script_tag }}

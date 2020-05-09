@@ -1,0 +1,292 @@
+{% layout 'product' %}
+      
+  <div data-collapse="medium" data-animation="default" data-duration="400" role="banner" class="navigation w-nav">
+    <div class="mainmenuwrap"><a href="/" id="w-node-f20facedcda8-cd55b9ef" class="brand w-nav-brand"><img src="{{ 'logo.png' | asset_url }}" width="44" alt="Xialla Logo" class="header-logo"></a>
+      <div id="w-node-f20facedcdaa-cd55b9ef" class="nav1-menu-wrap">
+        <div class="div-block-141">
+          <nav role="navigation" class="nav-menu-2 w-nav-menu"><a href="#" class="nav-link-2 dropdown-home w-nav-link">{{ 'product.A_0' | t }}</a>
+            <div data-delay="0" class="nav-link-2 w-dropdown">
+              <div class="dropdown-toggle w-dropdown-toggle">
+                <div class="menu-text">{{ 'product.DIV_1' | t }}</div>
+                <div class="icon w-icon-dropdown-toggle"></div>
+              </div>
+              <nav class="dropdown-list-2 w-dropdown-list"><a href="/pages/how-it-works" class="menuitem dropdown w-dropdown-link">{{ 'product.A_2' | t }}</a><a href="/pages/clinical-trials" class="menuitem dropdown w-dropdown-link">{{ 'product.A_3' | t }}</a><a href="/pages/about" page="default" class="menuitem dropdown w-dropdown-link">{{ 'product.A_4' | t }}</a><a href="/pages/contact" class="menuitem dropdown w-dropdown-link">{{ 'product.A_5' | t }}</a></nav>
+            </div>
+            <div data-delay="0" class="nav-link-2 w-dropdown">
+              <div class="dropdown-toggle w-dropdown-toggle">
+                <div class="menu-text">{{ 'product.DIV_6' | t }}</div>
+                <div class="icon w-icon-dropdown-toggle"></div>
+              </div>
+              <nav class="dropdown-list-2 w-dropdown-list"><a href="/products/xialla" class="menuitem dropdown w-dropdown-link">{{ 'product.A_7' | t }}</a><a href="/products/adhesive-pads-30-pack" class="menuitem dropdown w-dropdown-link">{{ 'product.A_8' | t }}</a></nav>
+            </div>
+            <div data-delay="0" class="nav-link-2 w-dropdown">
+              <div class="dropdown-toggle w-dropdown-toggle">
+                <div class="menu-text">{{ 'product.DIV_9' | t }}</div>
+                <div class="icon w-icon-dropdown-toggle"></div>
+              </div>
+              <nav class="dropdown-list-2 w-dropdown-list"><a href="/pages/help" class="menuitem dropdown w-dropdown-link">{{ 'product.A_10' | t }}</a><a href="/pages/customer-support" class="menuitem dropdown w-dropdown-link">{{ 'product.A_11' | t }}</a><a href="/pages/instructions-for-use" class="menuitem dropdown w-dropdown-link">{{ 'product.A_12' | t }}</a></nav>
+            </div>
+          </nav>
+        </div>
+        <div class="div-block-140">
+          <div data-node-type="commerce-cart-wrapper" data-open-product="" data-wf-cart-type="rightDropdown" data-wf-cart-query="" data-wf-page-link-href-prefix="" class="w-commerce-commercecartwrapper cart-3">
+            <a href="#" data-node-type="commerce-cart-open-link" class="w-commerce-commercecartopenlink button cc-cart w-inline-block">
+              <div class="w-commerce-commercecartopenlinkcount cart-quantity-2" udy-el="cart-count">{{ cart.item_count }}</div>
+            </a>
+            <div data-node-type="commerce-cart-container-wrapper" style="display:none" class="w-commerce-commercecartcontainerwrapper w-commerce-commercecartcontainerwrapper--cartType-rightDropdown">
+              <div data-node-type="commerce-cart-container" class="w-commerce-commercecartcontainer cart-container-3">
+                <div class="w-commerce-commercecartheader">
+                  <h4 class="w-commerce-commercecartheading">{{ 'product.H4_13' | t }}</h4><a href="#" data-node-type="commerce-cart-close-link" class="w-commerce-commercecartcloselink close-button-3 w-inline-block"><svg width="16px" height="16px" viewBox="0 0 16 16"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill-rule="nonzero" fill="#333333"><polygon points="6.23223305 8 0.616116524 13.6161165 2.38388348 15.3838835 8 9.76776695 13.6161165 15.3838835 15.3838835 13.6161165 9.76776695 8 15.3838835 2.38388348 13.6161165 0.616116524 8 6.23223305 2.38388348 0.616116524 0.616116524 2.38388348 6.23223305 8"></polygon></g></g></svg></a></div>
+                <div class="w-commerce-commercecartformwrapper">
+                  <form data-node-type="commerce-cart-form" class="w-commerce-commercecartform {% if cart.item_count == 0 %}udesly-display-none{% endif %}">
+                    
+                    
+                    <ul role="list" class="mini-cart-list" udy-el="items-list">
+                      {% for item in cart.items %}<li class="mini-cart-list-item">
+                        <div class="product-row">
+                          <div class="div-block-137"><img src="{{ item.product.featured_image.src | img_url: 'large' }}" alt="" class="image-32">
+                            <div class="div-block-142">
+                              <div class="cart-product-name">{{ item.product.title }}</div>
+                              <div class="cart-product-price">{{ item.price | money }}</div>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="text-block-82">{{ item.quantity }}</div>
+                          </div>
+                        </div>
+                      </li>{% endfor %}
+                    </ul>
+                    <div class="w-commerce-commercecartfooter {% if cart.item_count == 0 %}udesly-display-none{% endif %}" udy-el="cart-actions">
+                      <div class="w-commerce-commercecartlineitem popup-cart-line-item">
+                        <div class="popup-cart-subtotal-label">{{ 'product.DIV_14' | t }}</div>
+                        <div class="w-commerce-commercecartordervalue popup-cart-subtotal" udy-el="cart-total">{{ cart.total_price | money }}</div>
+                      </div>
+                      <div class="checkout-actions"><a href="/cart" value="Edit" data-node-type="cart-checkout-button" class="w-commerce-commercecartcheckoutbutton submit-button-2 cart-details" data-loading-text="Edit">{{ 'product.A_15' | t }}</a><a href="/checkout" value="Checkout" data-node-type="cart-checkout-button" class="w-commerce-commercecartcheckoutbutton submit-button-2 checkout" data-loading-text="Chekout">{{ 'product.A_16' | t }}</a></div>
+                    </div>
+                  </form>
+                  <div class="w-commerce-commercecartemptystate {% if cart.item_count != 0 %}udesly-display-none{% endif %}" udy-el="no-items-in-cart">
+                    <div class="text-block-84">{{ 'product.DIV_17' | t }}</div>
+                  </div>
+                  <div style="display:none" data-node-type="commerce-cart-error" class="w-commerce-commercecarterrorstate">
+                    <div class="w-cart-error-msg" data-w-cart-quantity-error="Product is not available in this quantity." data-w-cart-checkout-error="Checkout is disabled on this site." data-w-cart-general-error="Something went wrong when adding this item to the cart." data-w-cart-cart_order_min-error="Cart failed.">{{ 'product.DIV_18' | t }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <script id="mini-cart-template">
+          window.udeslyMiniCartTemplate = function(item) {
+            return `<li class="mini-cart-list-item" data-item-id="${item.id}">
+                        <div class="product-row">
+                          <div class="div-block-137"><img src="${item.image}" alt="" class="image-32">
+                            <div class="div-block-142">
+                              <div class="cart-product-name">${item.title}</div>
+                              <div class="cart-product-price">${item.price}</div>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="text-block-82">${item.quantity}</div>
+                          </div>
+                        </div>
+                      </li>`
+          }
+          </script></div>
+          <a href="/products/xialla" class="button-small header w-inline-block">
+            <div class="button-label">{{ 'product.DIV_19' | t }}</div>
+          </a>
+          <div class="menu-button-2 w-nav-button"><img src="{{ 'bars.svg' | asset_url }}" alt="" class="menu-icon-2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="component-divider-product-header"></div>
+    <div class="section-product">
+      <div class="w-layout-grid product-grid">
+        <div id="w-node-177012160c34-f244e4f6" class="hero1-content product-detail-wrap">
+          <div class="hero1-product-name-wrap">
+            <h1 class="page-title">{{ product.title }}</h1>
+            <div class="paragraph-normal">{{ product.description }}</div>
+          </div>
+          <div class="price-block xialla">
+            <div class="compare-at-price {% if product.compare_at_price_max > product.price %}udesly-display-none{% endif %}" udy-el="compare-price">{{ current_variant.compare_at_price | money }}</div>
+            <div class="product-price" udy-el="current-price">{{ current_variant.price | money }}</div>
+          </div>
+          <div class="sizing-container-3">
+            <a id="Regular-Radio" data-w-id="1279107a-6731-f2fe-acfe-177012160c42" href="#" class="sizeoptionradio w-inline-block">
+              <div style="background-color:rgb(0,0,0)" class="sizergradio"></div>
+              <div class="penis-size-text">{{ 'product.DIV_20' | t }}<span class="text-span-8"> </span><br></div>
+            </a>
+            <a id="Thicker-Radio" data-w-id="1279107a-6731-f2fe-acfe-177012160c49" href="#" class="sizeoptionradio w-inline-block">
+              <div class="sizethradio"></div>
+              <div class="penis-size-text">{{ 'product.DIV_21' | t }}<span class="text-span-8"> </span><br></div>
+            </a>
+            <a id="Slender-Radio" data-w-id="1279107a-6731-f2fe-acfe-177012160c50" href="#" class="sizeoptionradio w-inline-block">
+              <div class="sizeslradio"></div>
+              <div class="penis-size-text">{{ 'product.DIV_22' | t }}<span class="text-span-8"> </span><br></div>
+            </a>
+          </div>
+          <div udy-el="single-add-to-cart">
+            {% form "product", product %}<form data-node-type="commerce-add-to-cart-form" class="w-commerce-commerceaddtocartform">
+              
+              {% include 'product-variations-selectors', wrapperClass: 'option-wrapper', optionClass: 'item-option', colorClass: 'item-color-hidden', titleClass: 'text-label-7 size' %}<label for="quantity-5b57c5055bc678f0fcfd8773bbeda279" class="text-label-7">{{ 'product.LABEL_23' | t }}</label>
+              <div class="quantity-and-add-to-cart-wrapper"><input type="number" id="quantity-5b57c5055bc678f0fcfd8773bbeda279" name="quantity" min="1" class="w-commerce-commerceaddtocartquantityinput quantity-spinner" value="1"><input type="submit" value="Add To Cart" data-loading-text="Adding to cart..." class="w-commerce-commerceaddtocartbutton submit-button add-to-cart"></div>
+            </form>{% endform %}
+            <div style="display:none" class="w-commerce-commerceaddtocartoutofstock">
+              <div>{{ 'product.DIV_24' | t }}</div>
+            </div>
+            <div data-node-type="commerce-add-to-cart-error" style="display:none" class="w-commerce-commerceaddtocarterror" udy-el="add-to-cart-errors">
+              <div class="w-add-to-cart-error-msg" data-w-add-to-cart-quantity-error="Product is not available in this quantity." data-w-add-to-cart-general-error="Something went wrong when adding this item to the cart.">{{ 'product.DIV_25' | t }}</div>
+            </div>
+          </div>
+          {% if product.title == "Xialla" %}<div class="sizing-guide-block">
+            <a data-w-id="1279107a-6731-f2fe-acfe-177012160c6b" href="#" class="button-sizing-guide text-label w-inline-block">
+              <div class="button-label-sizing-guide">{{ 'product.DIV_26' | t }}</div><img src="https://uploads-ssl.webflow.com/5dd07020edfe6a1f4c682c0e/5dd07020edfe6a7c87682c3d_arrow-dark%402x.svg" alt="" class="button-arrow-3"></a>
+            <div data-w-id="1279107a-6731-f2fe-acfe-177012160c6f" style="opacity:0;height:0PX" class="sizing-guide-container">
+              <div class="w-layout-grid sizing-guide">
+                <div id="w-node-177012160c71-f244e4f6" class="text-block-31"><strong class="bold-text-6">{{ 'product.STRONG_27' | t }}</strong></div>
+                <div id="w-node-177012160c74-f244e4f6" class="sizing-guide-column-header">{{ 'product.DIV_28' | t }}</div>
+                <div id="w-node-177012160c76-f244e4f6"><span class="larger">{{ 'product.SPAN_29' | t }}</span>{{ 'product.DIV_30' | t }}</div>
+                <div id="w-node-177012160c7a-f244e4f6"><span class="larger">{{ 'product.SPAN_31' | t }}</span>{{ 'product.DIV_32' | t }}</div>
+                <div id="w-node-177012160c7e-f244e4f6" class="table-line-horizontal"></div>
+                <div id="w-node-177012160c7f-f244e4f6" class="sizing-guide-column-header">{{ 'product.DIV_33' | t }}</div>
+                <div id="w-node-177012160c81-f244e4f6">{{ 'product.DIV_34' | t }}</div>
+                <div id="w-node-177012160c83-f244e4f6">{{ 'product.DIV_35' | t }}</div>
+                <div id="w-node-177012160c85-f244e4f6">
+                  <div class="sizing-guide-label">{{ 'product.DIV_36' | t }}</div>
+                  <div class="sizing-guide-label tiny">{{ 'product.DIV_37' | t }}</div>
+                </div>
+                <div id="w-node-177012160c8a-f244e4f6" class="sizing-guide-label">{{ 'product.DIV_38' | t }}</div>
+                <div id="w-node-177012160c8c-f244e4f6" class="sizing-guide-label">{{ 'product.DIV_39' | t }}</div>
+                <div id="w-node-177012160c8e-f244e4f6"><span class="larger">{{ 'product.SPAN_40' | t }}</span>{{ 'product.DIV_41' | t }}</div>
+                <div id="w-node-177012160c92-f244e4f6"><span class="larger">{{ 'product.SPAN_42' | t }}</span>{{ 'product.DIV_43' | t }}</div>
+                <div id="w-node-177012160c96-f244e4f6" class="table-line-vertical"></div>
+                <div id="w-node-177012160c97-f244e4f6" class="table-line-horizontal"></div>
+                <div id="w-node-177012160c98-f244e4f6" class="table-line-horizontal"></div>
+                <div id="w-node-177012160c99-f244e4f6" class="table-line-horizontal"></div>
+              </div>
+              <div class="product-detail-text">{{ 'product.DIV_44' | t }}</div>
+            </div>
+          </div>{% endif %}
+          {% if product.title == "Xialla" %}<div class="whats-included-block">
+            <h2 class="text-label-7 text-label-sub">{{ 'product.H2_45' | t }}</h2>
+            <div class="product-detail-text">{{ 'product.DIV_46' | t }}<br>{{ 'product.DIV_47' | t }}<br></div>
+          </div>{% endif %}
+          <div class="backordered-block">
+            <h2 class="text-label-7 text-label-sub">{{ 'product.H2_48' | t }}</h2>
+            <ul role="list" class="list">
+              <li class="bullet-list-item">
+                <div class="product-detail-text">{{ 'product.DIV_49' | t }}</div>
+              </li>
+              <li class="bullet-list-item">
+                <div class="product-detail-text">{{ 'product.DIV_50' | t }}</div>
+              </li>
+              <li class="bullet-list-item">
+                <div class="product-detail-text">{{ 'product.DIV_51' | t }}</div>
+              </li>
+            </ul>
+          </div>
+          <div class="discreet-shipping-block">
+            <h2 class="text-label-7 text-label-sub">{{ 'product.H2_52' | t }}</h2>
+            <div class="product-detail-text xialla">{{ 'product.DIV_53' | t }}</div><img src="{{ 'Xialla-Envelope-800.jpg' | asset_url }}" alt="Discreet Shipping" srcset="{{ 'Xialla-Envelope-800-p-500.jpeg' | asset_url }} 500w, {{ 'Xialla-Envelope-800.jpg' | asset_url }} 800w" sizes="300px" class="image-21"></div>
+        </div><img width="510" src="{{ image | product_img_url: 'large' }}" id="w-node-177012160cb7-f244e4f6" alt="" class="product-image-main" udy-el="product-featured-image"></div>
+    </div>
+    <div class="component-divider-small"></div>
+    <div class="wrapper">
+      <div class="section-15">
+        <div class="w-layout-grid headline-grid">
+          <div id="w-node-3bd8bee931db-f244e4f6">
+            <h3>{{ 'product.H3_54' | t }}</h3>
+            <p class="paragraph-normal">{{ 'product.P_55' | t }}</p>
+          </div>
+          <div id="w-node-3bd8bee931e2-f244e4f6">
+            <h3>{{ 'product.H3_56' | t }}</h3>
+            <p class="paragraph-normal">{{ 'product.P_57' | t }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="component-divider-small"></div>
+    <div class="section-15">
+      <div class="w-layout-grid headline-grid">
+        <div id="w-node-eac3736b4e26-f244e4f6">
+          <h3>{{ 'product.H3_58' | t }}</h3>
+          {% if product.title == "Xialla" %}<div class="product-also-like-wrap"><a href="/products/adhesive-pads-30-pack" class="product-also-like-link w-inline-block"><img src="{{ 'Adhesive-Pads.jpg' | asset_url }}" srcset="{{ 'Adhesive-Pads-p-1080.jpeg' | asset_url }} 1080w, {{ 'Adhesive-Pads.jpg' | asset_url }} 1600w" sizes="340px" alt="" class="image-33"></a>
+            <div class="product4-content-wrap">
+              <div class="size4-text-3 size4-full-clear">{{ 'product.DIV_59' | t }}</div>
+              <div class="paragraph-normal also-like-product-desc">{{ 'product.DIV_60' | t }}</div>
+              <div class="div-block-94">
+                <div class="compare-at-price-2">{{ 'product.DIV_61' | t }}</div>
+                <div class="product-price-2">{{ 'product.DIV_62' | t }}</div>
+              </div>
+            </div>
+          </div>{% endif %}
+          {% if product.title == "Adhesive Pads 30-Pack" %}<div class="product-also-like-wrap"><a href="/products/xialla" class="product-also-like-link w-inline-block"><img srcset="{{ 'Xialla_1-p-500.png' | asset_url }} 500w, {{ 'Xialla_1.png' | asset_url }} 693w" sizes="340px" src="{{ 'Xialla_1.png' | asset_url }}" alt="" class="image-33"></a>
+            <div class="product4-content-wrap">
+              <div class="size4-text-3 size4-full-clear">{{ 'product.DIV_63' | t }}</div>
+              <div class="paragraph-normal also-like-product-desc">{{ 'product.DIV_64' | t }}</div>
+              <div class="div-block-94">
+                <div class="compare-at-price-2">{{ 'product.DIV_65' | t }}</div>
+                <div class="product-price-2">{{ 'product.DIV_66' | t }}</div>
+              </div>
+            </div>
+          </div>{% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="component-divider"></div>
+  <div class="footer-wrapper">
+    <div class="footer-simple-top-section">
+      <div class="section-normal">
+        <div class="content">
+          <div class="footer2-divider"></div>
+        </div>
+        <div class="w-layout-grid footer2-links-grid">
+          <div id="w-node-8fe8825a9ceb-825a9cd1"><a href="#" class="footer-logo-link w-inline-block"><img src="{{ 'logo.png' | asset_url }}" alt="Xialla Logo"></a>
+            <div class="footer2-links-wrap">
+              <h6 class="text-label-footer-links-header">{{ 'product.H6_67' | t }}</h6><a href="mailto:press@xialla.com" class="footer2-link">{{ 'product.A_68' | t }}</a></div>
+          </div>
+          <div id="w-node-8fe8825a9cf3-825a9cd1" class="footer2-links-wrap">
+            <h6 class="text-label-footer-links-header">{{ 'product.H6_69' | t }}</h6><a href="/products/xialla" class="footer2-link">{{ 'product.A_70' | t }}</a><a href="/products/adhesive-pads-30-pack" class="footer2-link">{{ 'product.A_71' | t }}</a><a href="/pages/refund-policy" class="footer2-link">{{ 'product.A_72' | t }}</a></div>
+          <div id="w-node-8fe8825a9cfc-825a9cd1" class="footer2-links-wrap">
+            <h6 class="text-label-footer-links-header">{{ 'product.H6_73' | t }}</h6><a href="/pages/how-it-works" class="footer2-link">{{ 'product.A_74' | t }}</a><a href="/pages/instructions-for-use" class="footer2-link">{{ 'product.A_75' | t }}</a><a href="/pages/clinical-trials" class="footer2-link">{{ 'product.A_76' | t }}</a><a href="/pages/info-kit" class="footer2-link">{{ 'product.A_77' | t }}</a><a href="/pages/about" class="footer2-link">{{ 'product.A_78' | t }}</a></div>
+          <div id="w-node-8fe8825a9d09-825a9cd1" class="footer2-links-wrap">
+            <h6 class="text-label-footer-links-header">{{ 'product.H6_79' | t }}</h6><a href="/pages/customer-support" class="footer2-link">{{ 'product.A_80' | t }}</a><a href="/pages/help" class="footer2-link">{{ 'product.A_81' | t }}</a><a href="/pages/contact" class="footer2-link">{{ 'product.A_82' | t }}</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="section-normal">
+      <div class="w-layout-grid footer2-bottom-grid">
+        <div id="w-node-8fe8825a9d14-825a9cd1" class="footer2-bottom-left-column">
+          <div class="deco-dot deco-dot-centered"></div>
+          <div class="paragraph-small-2">{{ 'product.DIV_83' | t }}<br>{{ 'product.DIV_84' | t }}<br>{{ 'product.DIV_85' | t }}<br>{{ 'product.DIV_86' | t }}<br>{{ 'product.DIV_87' | t }}<a href="/practitioners#clinical-studies"><br></a></div>
+        </div>
+        <div id="w-node-8fe8825a9d23-825a9cd1">
+          <div class="footer2-disclaimer-wrap">
+            <p class="paragraph">{{ 'product.P_88' | t }}</p>
+          </div>
+        </div>
+        <div id="w-node-8fe8825a9d27-825a9cd1" class="div-block-137"><a href="/pages/terms-of-service" class="footer-small-link">{{ 'product.A_89' | t }}</a><a href="/pages/privacy-policy" class="footer-small-link">{{ 'product.A_90' | t }}</a></div>
+      </div>
+    </div>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js?site=5eac0ded2d2f09a505faf644" type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="{{ 'webflow.js' | asset_url }}" type="text/javascript"></script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+  <!--  Stop iPhone from changing color of phone links  -->
+  <style>
+  a[href^=tel] {
+text-decoration:inherit;
+color: inherit;
+}
+</style>
+  <!--  End Stop iPhone   -->
+  <!--  Ellipsis style used for truncating search result item title  -->
+  <style>
+  .ellipsis {
+  text-overflow: ellipsis;
+}
+</style>
+  <!--  End Elipsis  -->
+
+{% include 'notifications' %}{{ 'udesly-shopify.min.js' | asset_url | script_tag }}{{ 'option_selection.js' | shopify_asset_url | script_tag }}{% include 'single-product-scripts' %}

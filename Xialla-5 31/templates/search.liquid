@@ -1,0 +1,175 @@
+{% layout 'search' %}
+      
+  <div class="w-container"></div>
+  <div data-collapse="medium" data-animation="default" data-duration="400" role="banner" class="navigation w-nav">
+    <div class="mainmenuwrap"><a href="/" id="w-node-f20facedcda8-cd55b9ef" class="brand w-nav-brand"><img src="{{ 'logo.png' | asset_url }}" width="44" alt="Xialla Logo" class="header-logo"></a>
+      <div id="w-node-f20facedcdaa-cd55b9ef" class="nav1-menu-wrap">
+        <div class="div-block-141">
+          <nav role="navigation" class="nav-menu-2 w-nav-menu"><a href="#" class="nav-link-2 dropdown-home w-nav-link">{{ 'search.A_0' | t }}</a>
+            <div data-delay="0" class="nav-link-2 w-dropdown">
+              <div class="dropdown-toggle w-dropdown-toggle">
+                <div class="menu-text">{{ 'search.DIV_1' | t }}</div>
+                <div class="icon w-icon-dropdown-toggle"></div>
+              </div>
+              <nav class="dropdown-list-2 w-dropdown-list"><a href="/pages/how-it-works" class="menuitem dropdown w-dropdown-link">{{ 'search.A_2' | t }}</a><a href="/pages/clinical-trials" class="menuitem dropdown w-dropdown-link">{{ 'search.A_3' | t }}</a><a href="/pages/about" page="default" class="menuitem dropdown w-dropdown-link">{{ 'search.A_4' | t }}</a><a href="/pages/contact" class="menuitem dropdown w-dropdown-link">{{ 'search.A_5' | t }}</a></nav>
+            </div>
+            <div data-delay="0" class="nav-link-2 w-dropdown">
+              <div class="dropdown-toggle w-dropdown-toggle">
+                <div class="menu-text">{{ 'search.DIV_6' | t }}</div>
+                <div class="icon w-icon-dropdown-toggle"></div>
+              </div>
+              <nav class="dropdown-list-2 w-dropdown-list"><a href="/products/xialla" class="menuitem dropdown w-dropdown-link">{{ 'search.A_7' | t }}</a><a href="/products/adhesive-pads-30-pack" class="menuitem dropdown w-dropdown-link">{{ 'search.A_8' | t }}</a></nav>
+            </div>
+            <div data-delay="0" class="nav-link-2 w-dropdown">
+              <div class="dropdown-toggle w-dropdown-toggle">
+                <div class="menu-text">{{ 'search.DIV_9' | t }}</div>
+                <div class="icon w-icon-dropdown-toggle"></div>
+              </div>
+              <nav class="dropdown-list-2 w-dropdown-list"><a href="/pages/help" class="menuitem dropdown w-dropdown-link">{{ 'search.A_10' | t }}</a><a href="/pages/customer-support" class="menuitem dropdown w-dropdown-link">{{ 'search.A_11' | t }}</a><a href="/pages/instructions-for-use" class="menuitem dropdown w-dropdown-link">{{ 'search.A_12' | t }}</a></nav>
+            </div>
+          </nav>
+        </div>
+        <div class="div-block-140">
+          <div data-node-type="commerce-cart-wrapper" data-open-product="" data-wf-cart-type="rightDropdown" data-wf-cart-query="" data-wf-page-link-href-prefix="" class="w-commerce-commercecartwrapper cart-3">
+            <a href="#" data-node-type="commerce-cart-open-link" class="w-commerce-commercecartopenlink button cc-cart w-inline-block">
+              <div class="w-commerce-commercecartopenlinkcount cart-quantity-2" udy-el="cart-count">{{ cart.item_count }}</div>
+            </a>
+            <div data-node-type="commerce-cart-container-wrapper" style="display:none" class="w-commerce-commercecartcontainerwrapper w-commerce-commercecartcontainerwrapper--cartType-rightDropdown">
+              <div data-node-type="commerce-cart-container" class="w-commerce-commercecartcontainer cart-container-3">
+                <div class="w-commerce-commercecartheader">
+                  <h4 class="w-commerce-commercecartheading">{{ 'search.H4_13' | t }}</h4><a href="#" data-node-type="commerce-cart-close-link" class="w-commerce-commercecartcloselink close-button-3 w-inline-block"><svg width="16px" height="16px" viewBox="0 0 16 16"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill-rule="nonzero" fill="#333333"><polygon points="6.23223305 8 0.616116524 13.6161165 2.38388348 15.3838835 8 9.76776695 13.6161165 15.3838835 15.3838835 13.6161165 9.76776695 8 15.3838835 2.38388348 13.6161165 0.616116524 8 6.23223305 2.38388348 0.616116524 0.616116524 2.38388348 6.23223305 8"></polygon></g></g></svg></a></div>
+                <div class="w-commerce-commercecartformwrapper">
+                  <form data-node-type="commerce-cart-form" class="w-commerce-commercecartform {% if cart.item_count == 0 %}udesly-display-none{% endif %}">
+                    
+                    
+                    <ul role="list" class="mini-cart-list" udy-el="items-list">
+                      {% for item in cart.items %}<li class="mini-cart-list-item">
+                        <div class="product-row">
+                          <div class="div-block-137"><img src="{{ item.product.featured_image.src | img_url: 'large' }}" alt="" class="image-32">
+                            <div class="div-block-142">
+                              <div class="cart-product-name">{{ item.product.title }}</div>
+                              <div class="cart-product-price">{{ item.price | money }}</div>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="text-block-82">{{ item.quantity }}</div>
+                          </div>
+                        </div>
+                      </li>{% endfor %}
+                    </ul>
+                    <div class="w-commerce-commercecartfooter {% if cart.item_count == 0 %}udesly-display-none{% endif %}" udy-el="cart-actions">
+                      <div class="w-commerce-commercecartlineitem popup-cart-line-item">
+                        <div class="popup-cart-subtotal-label">{{ 'search.DIV_14' | t }}</div>
+                        <div class="w-commerce-commercecartordervalue popup-cart-subtotal" udy-el="cart-total">{{ cart.total_price | money }}</div>
+                      </div>
+                      <div class="checkout-actions"><a href="/cart" value="Edit" data-node-type="cart-checkout-button" class="w-commerce-commercecartcheckoutbutton submit-button-2 cart-details" data-loading-text="Edit">{{ 'search.A_15' | t }}</a><a href="/checkout" value="Checkout" data-node-type="cart-checkout-button" class="w-commerce-commercecartcheckoutbutton submit-button-2 checkout" data-loading-text="Chekout">{{ 'search.A_16' | t }}</a></div>
+                    </div>
+                  </form>
+                  <div class="w-commerce-commercecartemptystate {% if cart.item_count != 0 %}udesly-display-none{% endif %}" udy-el="no-items-in-cart">
+                    <div class="text-block-84">{{ 'search.DIV_17' | t }}</div>
+                  </div>
+                  <div style="display:none" data-node-type="commerce-cart-error" class="w-commerce-commercecarterrorstate">
+                    <div class="w-cart-error-msg" data-w-cart-quantity-error="Product is not available in this quantity." data-w-cart-checkout-error="Checkout is disabled on this site." data-w-cart-general-error="Something went wrong when adding this item to the cart." data-w-cart-cart_order_min-error="Cart failed.">{{ 'search.DIV_18' | t }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <script id="mini-cart-template">
+          window.udeslyMiniCartTemplate = function(item) {
+            return `<li class="mini-cart-list-item" data-item-id="${item.id}">
+                        <div class="product-row">
+                          <div class="div-block-137"><img src="${item.image}" alt="" class="image-32">
+                            <div class="div-block-142">
+                              <div class="cart-product-name">${item.title}</div>
+                              <div class="cart-product-price">${item.price}</div>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="text-block-82">${item.quantity}</div>
+                          </div>
+                        </div>
+                      </li>`
+          }
+          </script></div>
+          <a href="/products/xialla" class="button-small header w-inline-block">
+            <div class="button-label">{{ 'search.DIV_19' | t }}</div>
+          </a>
+          <div class="menu-button-2 w-nav-button"><img src="{{ 'bars.svg' | asset_url }}" alt="" class="menu-icon-2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="intro-header">
+    <div class="intro-content">
+      <div class="intro-text">
+        <div class="heading-jumbo">{{ 'search.DIV_20' | t }}<br></div>
+        {% if search.performed %}<div>{{ search.terms }}</div>{% endif %}
+      </div>
+      <form action="/search" class="search w-form" method="get" role="search"><input type="search" class="search-input w-input" maxlength="256" name="q" placeholder="Search again…" id="search" required="" value="{{ search.terms | escape }}"><input type="submit" value="Search" class="search-button w-button"></form>
+    </div>
+  </div>
+  <div class="section">
+    {% paginate search.results by settings.search_results_limit %}<div class="w-dyn-list">
+      {% unless search.results_count == 0 %}<div class="collection-wrap w-dyn-items">
+        {% for item in search.results %}<div class="collection-item w-dyn-item">
+          <a href="{{ item.url }}" class="product-image-wrap w-inline-block" style="background-image: url({{ item | img_url: 'master' }})">
+            <div class="product-description">
+              <div class="product-name-text">{{ item.title }}</div>
+              <div class="product-price-text"></div>
+              <p>{% include 'search-item-excerpt' %}</p>
+            </div>
+          </a>
+        </div>{% endfor %}
+      </div>
+      {% else %}<div class="status-message cc-no-data w-dyn-empty">
+        <div>{{ 'search.DIV_21' | t }}</div>
+      </div>{% endunless %}
+    </div>{% endpaginate %}
+  </div>
+  <div class="section cc-subscribe-form">
+    <div class="container cc-subscription-form">
+      <div class="heading-jumbo-small">{{ 'search.DIV_22' | t }}</div>
+      <div class="paragraph-light cc-subscribe-paragraph">{{ 'search.DIV_23' | t }}</div>
+      {% form 'contact' %}<div class="form-block w-form">
+        <div udesly-add-class="subscribe-form"></div><input type="email" class="text-field cc-subscribe-text-field w-input" maxlength="256" name="contact[email]" placeholder="Enter your email" id="email" required=""><input type="submit" value="Submit" data-wait="Please wait..." class="button w-button">
+        
+        
+      </div><div class="form-block w-form">{% if form.errors %}<div class="status-message w-form-fail" style="display: inherit;">
+          <div>{% include 'form-errors' %}</div>
+        </div>{% endif %}{% if form.posted_successfully? %}<div class="status-message w-form-done" style="display: inherit;">
+          <div>{{ 'search.DIV_24' | t }}</div>
+        </div>{% endif %}</div>{% endform %}
+    </div>
+  </div>
+  <div class="section">
+    <div class="container">
+      <div class="w-layout-grid footer"><a href="/" id="w-node-2d9f87e2971b-87e29718" class="logo-link w-inline-block"><img src="{{ 'webflow-to-shopify.svg' | asset_url }}" width="165" alt="" class="logo-footer"></a>
+        <div id="w-node-2d9f87e2971d-87e29718" class="label">{{ 'search.DIV_25' | t }}</div>
+        <div id="w-node-2d9f87e2971f-87e29718" class="links-section-footer">{% for link in linklists['footer-menu'].links %}<a href="{{ link.url }}" class="footer-link">{{ link.title }}</a>{% endfor %}</div>
+        <div id="w-node-2d9f87e2972d-87e29718" class="label">{{ 'search.DIV_26' | t }}</div>
+        <div id="w-node-2d9f87e2972f-87e29718" class="links-section-footer">{% for link in linklists['footer-menu-two'].links %}<a href="{{ link.url }}" class="footer-link">{{ link.title }}</a>{% endfor %}</div>
+        <div id="w-node-2d9f87e29736-87e29718" class="label">{{ 'search.DIV_27' | t }}</div>
+        <div id="w-node-2d9f87e29738-87e29718" class="links-section-footer"><a href="https://www.instagram.com/webflowapp/" target="_blank" class="footer-link">{{ 'search.A_28' | t }}</a><a href="https://www.facebook.com/webflow/" target="_blank" class="footer-link">{{ 'search.A_29' | t }}</a><a href="https://twitter.com/webflow" target="_blank" class="footer-link">{{ 'search.A_30' | t }}</a></div>
+      </div>
+    </div>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js?site=5eac0ded2d2f09a505faf644" type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="{{ 'webflow.js' | asset_url }}" type="text/javascript"></script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+  <!--  Stop iPhone from changing color of phone links  -->
+  <style>
+  a[href^=tel] {
+text-decoration:inherit;
+color: inherit;
+}
+</style>
+  <!--  End Stop iPhone   -->
+  <!--  Ellipsis style used for truncating search result item title  -->
+  <style>
+  .ellipsis {
+  text-overflow: ellipsis;
+}
+</style>
+  <!--  End Elipsis  -->
+
+{% include 'notifications' %}{{ 'udesly-shopify.min.js' | asset_url | script_tag }}

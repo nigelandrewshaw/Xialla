@@ -1,0 +1,285 @@
+{% layout 'page.about' %}
+      
+  <div data-collapse="medium" data-animation="default" data-duration="400" role="banner" class="navigation w-nav">
+    <div class="mainmenuwrap"><a href="/" id="w-node-f20facedcda8-cd55b9ef" class="brand w-nav-brand"><img src="{{ 'logo.png' | asset_url }}" width="44" alt="Xialla Logo" class="header-logo"></a>
+      <div id="w-node-f20facedcdaa-cd55b9ef" class="nav1-menu-wrap">
+        <div class="div-block-141">
+          <nav role="navigation" class="nav-menu-2 w-nav-menu"><a href="#" class="nav-link-2 dropdown-home w-nav-link">{{ 'about.A_0' | t }}</a>
+            <div data-delay="0" class="nav-link-2 w-dropdown">
+              <div class="dropdown-toggle w-dropdown-toggle">
+                <div class="menu-text">{{ 'about.DIV_1' | t }}</div>
+                <div class="icon w-icon-dropdown-toggle"></div>
+              </div>
+              <nav class="dropdown-list-2 w-dropdown-list"><a href="/pages/how-it-works" class="menuitem dropdown w-dropdown-link">{{ 'about.A_2' | t }}</a><a href="/pages/clinical-trials" class="menuitem dropdown w-dropdown-link">{{ 'about.A_3' | t }}</a><a href="/pages/about" page="default" aria-current="page" class="menuitem dropdown w-dropdown-link w--current">{{ 'about.A_4' | t }}</a><a href="/pages/contact" class="menuitem dropdown w-dropdown-link">{{ 'about.A_5' | t }}</a></nav>
+            </div>
+            <div data-delay="0" class="nav-link-2 w-dropdown">
+              <div class="dropdown-toggle w-dropdown-toggle">
+                <div class="menu-text">{{ 'about.DIV_6' | t }}</div>
+                <div class="icon w-icon-dropdown-toggle"></div>
+              </div>
+              <nav class="dropdown-list-2 w-dropdown-list"><a href="/products/xialla" class="menuitem dropdown w-dropdown-link">{{ 'about.A_7' | t }}</a><a href="/products/adhesive-pads-30-pack" class="menuitem dropdown w-dropdown-link">{{ 'about.A_8' | t }}</a></nav>
+            </div>
+            <div data-delay="0" class="nav-link-2 w-dropdown">
+              <div class="dropdown-toggle w-dropdown-toggle">
+                <div class="menu-text">{{ 'about.DIV_9' | t }}</div>
+                <div class="icon w-icon-dropdown-toggle"></div>
+              </div>
+              <nav class="dropdown-list-2 w-dropdown-list"><a href="/pages/help" class="menuitem dropdown w-dropdown-link">{{ 'about.A_10' | t }}</a><a href="/pages/customer-support" class="menuitem dropdown w-dropdown-link">{{ 'about.A_11' | t }}</a><a href="/pages/instructions-for-use" class="menuitem dropdown w-dropdown-link">{{ 'about.A_12' | t }}</a></nav>
+            </div>
+          </nav>
+        </div>
+        <div class="div-block-140">
+          <div data-node-type="commerce-cart-wrapper" data-open-product="" data-wf-cart-type="rightDropdown" data-wf-cart-query="" data-wf-page-link-href-prefix="" class="w-commerce-commercecartwrapper cart-3">
+            <a href="#" data-node-type="commerce-cart-open-link" class="w-commerce-commercecartopenlink button cc-cart w-inline-block">
+              <div class="w-commerce-commercecartopenlinkcount cart-quantity-2" udy-el="cart-count">{{ cart.item_count }}</div>
+            </a>
+            <div data-node-type="commerce-cart-container-wrapper" style="display:none" class="w-commerce-commercecartcontainerwrapper w-commerce-commercecartcontainerwrapper--cartType-rightDropdown">
+              <div data-node-type="commerce-cart-container" class="w-commerce-commercecartcontainer cart-container-3">
+                <div class="w-commerce-commercecartheader">
+                  <h4 class="w-commerce-commercecartheading">{{ 'about.H4_13' | t }}</h4><a href="#" data-node-type="commerce-cart-close-link" class="w-commerce-commercecartcloselink close-button-3 w-inline-block"><svg width="16px" height="16px" viewBox="0 0 16 16"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill-rule="nonzero" fill="#333333"><polygon points="6.23223305 8 0.616116524 13.6161165 2.38388348 15.3838835 8 9.76776695 13.6161165 15.3838835 15.3838835 13.6161165 9.76776695 8 15.3838835 2.38388348 13.6161165 0.616116524 8 6.23223305 2.38388348 0.616116524 0.616116524 2.38388348 6.23223305 8"></polygon></g></g></svg></a></div>
+                <div class="w-commerce-commercecartformwrapper">
+                  <form data-node-type="commerce-cart-form" class="w-commerce-commercecartform {% if cart.item_count == 0 %}udesly-display-none{% endif %}">
+                    
+                    
+                    <ul role="list" class="mini-cart-list" udy-el="items-list">
+                      {% for item in cart.items %}<li class="mini-cart-list-item">
+                        <div class="product-row">
+                          <div class="div-block-137"><img src="{{ item.product.featured_image.src | img_url: 'large' }}" alt="" class="image-32">
+                            <div class="div-block-142">
+                              <div class="cart-product-name">{{ item.product.title }}</div>
+                              <div class="cart-product-price">{{ item.price | money }}</div>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="text-block-82">{{ item.quantity }}</div>
+                          </div>
+                        </div>
+                      </li>{% endfor %}
+                    </ul>
+                    <div class="w-commerce-commercecartfooter {% if cart.item_count == 0 %}udesly-display-none{% endif %}" udy-el="cart-actions">
+                      <div class="w-commerce-commercecartlineitem popup-cart-line-item">
+                        <div class="popup-cart-subtotal-label">{{ 'about.DIV_14' | t }}</div>
+                        <div class="w-commerce-commercecartordervalue popup-cart-subtotal" udy-el="cart-total">{{ cart.total_price | money }}</div>
+                      </div>
+                      <div class="checkout-actions"><a href="/cart" value="Edit" data-node-type="cart-checkout-button" class="w-commerce-commercecartcheckoutbutton submit-button-2 cart-details" data-loading-text="Edit">{{ 'about.A_15' | t }}</a><a href="/checkout" value="Checkout" data-node-type="cart-checkout-button" class="w-commerce-commercecartcheckoutbutton submit-button-2 checkout" data-loading-text="Chekout">{{ 'about.A_16' | t }}</a></div>
+                    </div>
+                  </form>
+                  <div class="w-commerce-commercecartemptystate {% if cart.item_count != 0 %}udesly-display-none{% endif %}" udy-el="no-items-in-cart">
+                    <div class="text-block-84">{{ 'about.DIV_17' | t }}</div>
+                  </div>
+                  <div style="display:none" data-node-type="commerce-cart-error" class="w-commerce-commercecarterrorstate">
+                    <div class="w-cart-error-msg" data-w-cart-quantity-error="Product is not available in this quantity." data-w-cart-checkout-error="Checkout is disabled on this site." data-w-cart-general-error="Something went wrong when adding this item to the cart." data-w-cart-cart_order_min-error="Cart failed.">{{ 'about.DIV_18' | t }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <script id="mini-cart-template">
+          window.udeslyMiniCartTemplate = function(item) {
+            return `<li class="mini-cart-list-item" data-item-id="${item.id}">
+                        <div class="product-row">
+                          <div class="div-block-137"><img src="${item.image}" alt="" class="image-32">
+                            <div class="div-block-142">
+                              <div class="cart-product-name">${item.title}</div>
+                              <div class="cart-product-price">${item.price}</div>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="text-block-82">${item.quantity}</div>
+                          </div>
+                        </div>
+                      </li>`
+          }
+          </script></div>
+          <a href="/products/xialla" class="button-small header w-inline-block">
+            <div class="button-label">{{ 'about.DIV_19' | t }}</div>
+          </a>
+          <div class="menu-button-2 w-nav-button"><img src="{{ 'bars.svg' | asset_url }}" alt="" class="menu-icon-2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-wrapper m100">
+    <div class="section-normal">
+      <div class="w-layout-grid content6-grid">
+        <div id="w-node-697bf7751d7a-b544e4ed" class="content6-headline-grid">
+          <div id="w-node-697bf7751d7b-b544e4ed" class="content6-headline-wrap">
+            <h1 class="page-title">{{ 'about.H1_20' | t }}</h1>
+            <p class="paragraph-normal">{{ 'about.P_21' | t }}</p>
+          </div>
+        </div>
+        <div id="w-node-697bf7751d82-b544e4ed" class="content6-image1"></div>
+        <div id="w-node-697bf7751d83-b544e4ed" class="content6-image2"></div>
+        <div id="w-node-697bf7751d84-b544e4ed" class="content6-image3"></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-wrapper m20">
+    <div class="section-normal">
+      <div class="w-layout-grid content16-grid">
+        <div id="w-node-697bf7751d88-b544e4ed" class="content16-left-column">
+          <div class="content16-headline-wrap">
+            <h2 class="size1-text">{{ 'about.H2_22' | t }}</h2>
+            <p class="paragraph-normal">{{ 'about.P_23' | t }}</p>
+          </div>
+          <a href="/products/xialla" data-w-id="fb1e10e9-7aa6-2a3c-45ce-697bf7751d90" class="button-small w-inline-block">
+            <div class="button-label">{{ 'about.DIV_24' | t }}</div><img src="https://uploads-ssl.webflow.com/5dd07020edfe6a1f4c682c0e/5dd07020edfe6a3b65682c3e_Arrow%402x.svg" alt="" class="button-arrow"></a>
+        </div>
+        <p id="w-node-697bf7751d94-b544e4ed" class="paragraph-normal"><strong>{{ 'about.STRONG_25' | t }}<br></strong>{{ 'about.P_26' | t }}<br>{{ 'about.P_27' | t }}<br><br>{{ 'about.P_28' | t }}<br><br>{{ 'about.P_29' | t }}<br><br>{{ 'about.P_30' | t }}<span class="text-span-2"></span></p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-wrapper">
+    <div id="benefits" class="content-wrapper-centered"></div>
+  </div>
+  <div class="footer-wrapper m100-50">
+    <div class="section-normal">
+      <div class="w-layout-grid content17-grid">
+        <div id="w-node-697bf7751dab-b544e4ed" class="content17-headline-wrap">
+          <h4 class="size2-text">{{ 'about.H4_31' | t }}</h4>
+        </div>
+        <div id="w-node-697bf7751db0-b544e4ed">
+          <div class="content17-author-pic content17-image1"></div>
+          <h6>{{ 'about.H6_32' | t }}</h6>
+          <h5>{{ 'about.H5_33' | t }}</h5>
+          <p class="paragraph-normal">{{ 'about.P_34' | t }}<br></p>
+        </div>
+        <div id="w-node-697bf7751db9-b544e4ed">
+          <div class="content17-author-pic content17-image2"></div>
+          <h6>{{ 'about.H6_35' | t }}</h6>
+          <h5>{{ 'about.H5_36' | t }}</h5>
+          <p class="paragraph-normal">{{ 'about.P_37' | t }}</p>
+        </div>
+        <div id="w-node-697bf7751dc1-b544e4ed">
+          <div class="content17-author-pic content17-image3"></div>
+          <h6>{{ 'about.H6_38' | t }}</h6>
+          <h5>{{ 'about.H5_39' | t }}</h5>
+          <p class="paragraph-normal">{{ 'about.P_40' | t }}<br></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-wrapper m100">
+    <div class="section-normal">
+      <div class="w-layout-grid content24-grid">
+        <div id="w-node-697bf7751dcd-b544e4ed" class="content24-quote">{{ 'about.DIV_41' | t }}</div>
+        <div id="w-node-697bf7751dcf-b544e4ed" class="content24-image"></div>
+        <div id="w-node-697bf7751dd0-b544e4ed">
+          <div class="content24-item-wrap">
+            <div class="deco-dot"></div>
+            <div>
+              <h4 class="text-label text-label-sub">{{ 'about.H4_42' | t }}</h4>
+              <p class="paragraph-normal">{{ 'about.P_43' | t }}<br></p>
+            </div>
+          </div>
+          <div class="content24-item-wrap">
+            <div class="deco-dot"></div>
+            <div>
+              <h4 class="text-label text-label-sub">{{ 'about.H4_44' | t }}</h4>
+              <p class="paragraph-normal">{{ 'about.P_45' | t }}<br></p>
+            </div>
+          </div>
+          <div class="content24-item-wrap">
+            <div class="deco-dot"></div>
+            <div>
+              <h4 class="text-label text-label-sub">{{ 'about.H4_46' | t }}</h4>
+              <p class="paragraph-normal">{{ 'about.P_47' | t }}<br></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-wrapper">
+    <div class="footer-simple-top-section">
+      <div class="section-normal yellow">
+        <div class="w-layout-grid footer2-form-grid">
+          <div id="w-node-28661869d3bf-1869d3bb">
+            <h5 class="size3-text size3-full-clear white">{{ 'about.H5_48' | t }}</h5>
+            <div class="paragraph-semi-bold size5-full-clear white">{{ 'about.DIV_49' | t }}</div>
+            <div class="paragraph-semi-bold">{{ 'about.DIV_50' | t }}</div>
+          </div>
+          <div id="w-node-28661869d3c6-1869d3bb">
+            <div id="subscribe-form" class="footer2-form w-form">
+              <form id="subscribe-form" name="wf-form-Subscribe-Form" data-name="Subscribe Form" method="post" class="footer2-form-wrap"><input type="email" class="form-field w-input" maxlength="256" name="Email-3" data-name="Email 3" placeholder="Enter your email" id="Email-3" required=""><input type="submit" value="Subscribe" data-wait="Please wait..." class="submit-button subscribe w-button"></form>
+              <div class="success-message w-form-done">
+                <div>{{ 'about.DIV_51' | t }}</div>
+              </div>
+              <div class="error-message w-form-fail">
+                <div>{{ 'about.DIV_52' | t }}</div>
+              </div>
+            </div>
+            <div class="html-embed w-embed w-script">
+              <!-- [if lte IE 8]>
+<script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/v2-legacy.js"></script>
+<![endif] -->
+              <script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/v2.js"></script>
+              <script>
+  hbspt.forms.create({
+	portalId: "5835628",
+	formId: "db3b18f8-9c57-4abc-a8c8-441b2f4d1674"
+});
+</script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-wrapper">
+    <div class="footer-simple-top-section">
+      <div class="section-normal">
+        <div class="content">
+          <div class="footer2-divider"></div>
+        </div>
+        <div class="w-layout-grid footer2-links-grid">
+          <div id="w-node-8fe8825a9ceb-825a9cd1"><a href="#" class="footer-logo-link w-inline-block"><img src="{{ 'logo.png' | asset_url }}" alt="Xialla Logo"></a>
+            <div class="footer2-links-wrap">
+              <h6 class="text-label-footer-links-header">{{ 'about.H6_53' | t }}</h6><a href="mailto:press@xialla.com" class="footer2-link">{{ 'about.A_54' | t }}</a></div>
+          </div>
+          <div id="w-node-8fe8825a9cf3-825a9cd1" class="footer2-links-wrap">
+            <h6 class="text-label-footer-links-header">{{ 'about.H6_55' | t }}</h6><a href="/products/xialla" class="footer2-link">{{ 'about.A_56' | t }}</a><a href="/products/adhesive-pads-30-pack" class="footer2-link">{{ 'about.A_57' | t }}</a><a href="/pages/refund-policy" class="footer2-link">{{ 'about.A_58' | t }}</a></div>
+          <div id="w-node-8fe8825a9cfc-825a9cd1" class="footer2-links-wrap">
+            <h6 class="text-label-footer-links-header">{{ 'about.H6_59' | t }}</h6><a href="/pages/how-it-works" class="footer2-link">{{ 'about.A_60' | t }}</a><a href="/pages/instructions-for-use" class="footer2-link">{{ 'about.A_61' | t }}</a><a href="/pages/clinical-trials" class="footer2-link">{{ 'about.A_62' | t }}</a><a href="/pages/info-kit" class="footer2-link">{{ 'about.A_63' | t }}</a><a href="/pages/about" aria-current="page" class="footer2-link w--current">{{ 'about.A_64' | t }}</a></div>
+          <div id="w-node-8fe8825a9d09-825a9cd1" class="footer2-links-wrap">
+            <h6 class="text-label-footer-links-header">{{ 'about.H6_65' | t }}</h6><a href="/pages/customer-support" class="footer2-link">{{ 'about.A_66' | t }}</a><a href="/pages/help" class="footer2-link">{{ 'about.A_67' | t }}</a><a href="/pages/contact" class="footer2-link">{{ 'about.A_68' | t }}</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="section-normal">
+      <div class="w-layout-grid footer2-bottom-grid">
+        <div id="w-node-8fe8825a9d14-825a9cd1" class="footer2-bottom-left-column">
+          <div class="deco-dot deco-dot-centered"></div>
+          <div class="paragraph-small-2">{{ 'about.DIV_69' | t }}<br>{{ 'about.DIV_70' | t }}<br>{{ 'about.DIV_71' | t }}<br>{{ 'about.DIV_72' | t }}<br>{{ 'about.DIV_73' | t }}<a href="/practitioners#clinical-studies"><br></a></div>
+        </div>
+        <div id="w-node-8fe8825a9d23-825a9cd1">
+          <div class="footer2-disclaimer-wrap">
+            <p class="paragraph">{{ 'about.P_74' | t }}</p>
+          </div>
+        </div>
+        <div id="w-node-8fe8825a9d27-825a9cd1" class="div-block-137"><a href="/pages/terms-of-service" class="footer-small-link">{{ 'about.A_75' | t }}</a><a href="/pages/privacy-policy" class="footer-small-link">{{ 'about.A_76' | t }}</a></div>
+      </div>
+    </div>
+  </div>
+  <a data-w-id="1c1c4019-2db4-f389-1940-137aa3098d22" href="/products/xialla" class="button-sticky-footer-2 w-inline-block">
+    <div class="button-label-3">{{ 'about.DIV_77' | t }}</div>
+  </a>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js?site=5eac0ded2d2f09a505faf644" type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="{{ 'webflow.js' | asset_url }}" type="text/javascript"></script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+  <!--  Stop iPhone from changing color of phone links  -->
+  <style>
+  a[href^=tel] {
+text-decoration:inherit;
+color: inherit;
+}
+</style>
+  <!--  End Stop iPhone   -->
+  <!--  Ellipsis style used for truncating search result item title  -->
+  <style>
+  .ellipsis {
+  text-overflow: ellipsis;
+}
+</style>
+  <!--  End Elipsis  -->
+
+{% include 'notifications' %}{{ 'udesly-shopify.min.js' | asset_url | script_tag }}
