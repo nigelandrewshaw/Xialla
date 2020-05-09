@@ -41,7 +41,7 @@
                   <form data-node-type="commerce-cart-form" class="w-commerce-commercecartform {% if cart.item_count == 0 %}udesly-display-none{% endif %}">
                     
                     
-                    <ul class="mini-cart-list" udy-el="items-list">
+                    <ul role="list" class="mini-cart-list" udy-el="items-list">
                       {% for item in cart.items %}<li class="mini-cart-list-item">
                         <div class="product-row">
                           <div class="div-block-137"><img src="{{ item.product.featured_image.src | img_url: 'large' }}" alt="" class="image-32">
